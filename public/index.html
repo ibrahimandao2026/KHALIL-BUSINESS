@@ -9,37 +9,187 @@
   <style>
     * {
       box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --navy: #062d5c;
+      --blue: #0864c7;
+      --light-blue: #eaf5ff;
+      --green: #079447;
+      --purple: #6835d8;
+      --orange: #f5a400;
+      --text: #092653;
+      --background: #eef8ff;
     }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f1f3f6;
-      color: #111827;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      padding-bottom: 85px;
     }
 
-    header {
-      background: #111827;
+    /* =========================
+       HEADER
+    ========================= */
+
+    .hero {
+      position: relative;
+      min-height: 285px;
+      overflow: hidden;
       color: white;
-      text-align: center;
-      padding: 25px 15px;
+      background: linear-gradient(
+        135deg,
+        #05284f 0%,
+        #06386d 100%
+      );
     }
 
-    header h1 {
-      margin: 0;
+    .hero::before {
+      content: "";
+      position: absolute;
+      left: -5%;
+      bottom: -72px;
+      width: 110%;
+      height: 120px;
+      background: white;
+      border-radius: 50% 50% 0 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -5%;
+      bottom: -60px;
+      width: 110%;
+      height: 30px;
+      background: #f5cf35;
+      transform: rotate(-2deg);
+    }
+
+    .hamburger {
+      position: absolute;
+      top: 27px;
+      left: 30px;
+      z-index: 5;
+      font-size: 32px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .bell {
+      position: absolute;
+      top: 27px;
+      right: 30px;
+      z-index: 5;
       font-size: 30px;
     }
 
-    header p {
-      margin: 10px 0 0;
-      font-size: 17px;
-      color: #d1d5db;
+    .bell-dot {
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #ed3340;
+      top: -1px;
+      right: -2px;
     }
 
-    .container {
-      width: 95%;
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      width: 94%;
       max-width: 1100px;
-      margin: 25px auto;
+      min-height: 260px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 25px 35px;
+    }
+
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .kb-logo {
+      width: 130px;
+      height: 130px;
+      flex-shrink: 0;
+      border: 5px solid #f5c92e;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #f5c92e;
+    }
+
+    .kb-crown {
+      font-size: 29px;
+      line-height: 28px;
+    }
+
+    .kb-text {
+      font-size: 43px;
+      font-weight: bold;
+      line-height: 42px;
+    }
+
+    .brand-title {
+      margin: 0;
+      font-size: 42px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .brand-title .gold {
+      color: #f5c92e;
+    }
+
+    .flag {
+      font-size: 33px;
+      margin-left: 7px;
+    }
+
+    .slogan {
+      margin: 12px 0 0;
+      font-size: 21px;
+      line-height: 1.4;
+      color: #e6eef8;
+    }
+
+    .profile-photo {
+      width: 190px;
+      height: 190px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 6px solid white;
+      box-shadow: 0 0 0 4px #f4cc35;
+      background: #ddd;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* =========================
+       CONTENU
+    ========================= */
+
+    .container {
+      width: 94%;
+      max-width: 1100px;
+      margin: 20px auto;
     }
 
     /* =========================
@@ -48,51 +198,162 @@
 
     .stats {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
 
-    .card {
+    .stat-card {
+      position: relative;
+      min-height: 175px;
+      padding: 25px;
+      overflow: hidden;
+      border-radius: 24px;
       background: white;
-      border-radius: 18px;
-      padding: 20px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 22px rgba(0, 60, 120, 0.09);
     }
 
-    .card-title {
-      font-size: 18px;
-      color: #6b7280;
-      margin-bottom: 10px;
+    .sales-card {
+      background: linear-gradient(
+        135deg,
+        #f0fff8,
+        #e8fff7
+      );
     }
 
-    .card-value {
-      font-size: 30px;
+    .profit-card {
+      background: linear-gradient(
+        135deg,
+        #f1f8ff,
+        #edf7ff
+      );
+    }
+
+    .products-card {
+      background: linear-gradient(
+        135deg,
+        #fffaf0,
+        #fff4d9
+      );
+    }
+
+    .customers-card {
+      background: linear-gradient(
+        135deg,
+        #faf5ff,
+        #f5eeff
+      );
+    }
+
+    .stat-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 34px;
+    }
+
+    .icon-green {
+      background: #0db955;
+    }
+
+    .icon-blue {
+      background: #268bea;
+    }
+
+    .icon-orange {
+      background: #f4a400;
+    }
+
+    .icon-purple {
+      background: #7139df;
+    }
+
+    .stat-title {
+      position: absolute;
+      left: 125px;
+      top: 28px;
+      font-size: 23px;
       font-weight: bold;
     }
 
+    .stat-value {
+      position: absolute;
+      left: 125px;
+      top: 68px;
+      font-size: 39px;
+      font-weight: bold;
+      color: #061f4b;
+    }
+
+    .stat-footer {
+      position: absolute;
+      left: 125px;
+      bottom: 23px;
+      font-size: 18px;
+    }
+
+    .green {
+      color: #079447;
+    }
+
+    .blue {
+      color: #0879df;
+    }
+
+    .orange {
+      color: #e89400;
+    }
+
+    .purple {
+      color: #7139df;
+    }
+
     /* =========================
-       MENU
+       BOUTONS PRINCIPAUX
     ========================= */
 
-    .menu {
+    .main-menu {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin: 20px 0;
+      gap: 18px;
+      margin: 22px 0;
     }
 
-    .menu button {
-      border: none;
-      padding: 16px 10px;
-      border-radius: 15px;
-      background: #e5e7eb;
-      color: #111827;
-      font-size: 16px;
+    .main-menu button {
+      min-height: 78px;
+      border: 0;
+      border-radius: 18px;
+      color: white;
+      font-size: 19px;
+      font-weight: bold;
       cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.12);
     }
 
-    .menu button:hover {
-      background: #d1d5db;
+    .btn-clients {
+      background: linear-gradient(
+        135deg,
+        #0755ad,
+        #0c68c9
+      );
+    }
+
+    .btn-sales {
+      background: linear-gradient(
+        135deg,
+        #008b43,
+        #08a658
+      );
+    }
+
+    .btn-ai {
+      background: linear-gradient(
+        135deg,
+        #5e2bc9,
+        #7439e7
+      );
     }
 
     /* =========================
@@ -102,10 +363,10 @@
     .section {
       display: none;
       background: white;
-      border-radius: 20px;
-      padding: 20px;
+      border-radius: 25px;
+      padding: 25px;
       margin-top: 15px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      box-shadow: 0 5px 20px rgba(0,50,100,0.08);
     }
 
     .section.active {
@@ -114,174 +375,377 @@
 
     .section h2 {
       margin-top: 0;
+      color: var(--text);
     }
 
     /* =========================
-       TABLEAU
+       ASSISTANT
     ========================= */
 
-    .dashboard {
-      background: #111827;
+    .assistant-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .assistant-heading {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .robot-circle {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: #0864c7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 35px;
       color: white;
-      border-radius: 20px;
-      padding: 25px;
-      margin-top: 20px;
     }
 
-    .dashboard h2 {
-      margin-top: 0;
+    .assistant-heading h2 {
+      margin: 0;
+      font-size: 30px;
     }
 
-    .dashboard button {
-      margin-top: 15px;
-      border: none;
-      background: white;
-      color: #111827;
-      padding: 14px 20px;
-      border-radius: 12px;
-      font-size: 16px;
-      cursor: pointer;
+    .status {
+      margin-top: 5px;
+      color: #079447;
+      font-size: 17px;
     }
 
-    /* =========================
-       IA
-    ========================= */
+    .assistant-name {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: right;
+    }
 
-    .chat-box {
-      border: 1px solid #ddd;
-      border-radius: 15px;
-      padding: 15px;
-      background: #f9fafb;
+    .assistant-name small {
+      display: block;
+      margin-top: 5px;
+      font-weight: normal;
     }
 
     #messages {
-      height: 350px;
+      min-height: 190px;
+      max-height: 430px;
       overflow-y: auto;
-      padding: 10px;
-      margin-bottom: 15px;
-      background: white;
-      border-radius: 12px;
+      padding: 12px;
+      margin: 18px 0;
+      background: #f7fbff;
+      border-radius: 20px;
     }
 
     .message {
-      padding: 12px 15px;
-      border-radius: 14px;
+      max-width: 88%;
       margin: 10px 0;
-      max-width: 90%;
+      padding: 16px 20px;
+      border-radius: 20px;
+      line-height: 1.55;
       white-space: pre-wrap;
-      line-height: 1.5;
     }
 
-    .user {
-      background: #dbeafe;
+    .message.assistant {
+      background: #e7f2ff;
+      margin-right: auto;
+    }
+
+    .message.user {
+      background: #d7ebff;
       margin-left: auto;
       text-align: right;
     }
 
-    .assistant {
-      background: #e5e7eb;
-      margin-right: auto;
+    .quick-buttons {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 3px 0 12px;
+    }
+
+    .quick-buttons button {
+      white-space: nowrap;
+      border: 2px solid #a5d1f5;
+      color: #0870d4;
+      background: white;
+      border-radius: 25px;
+      padding: 10px 16px;
+      cursor: pointer;
     }
 
     .chat-form {
       display: flex;
-      gap: 10px;
+      align-items: center;
+      gap: 8px;
+      border: 2px solid #b7daf7;
+      border-radius: 35px;
+      padding: 7px 8px 7px 16px;
+      background: white;
     }
 
     #messageInput {
       flex: 1;
-      min-height: 55px;
+      min-height: 48px;
+      max-height: 130px;
       resize: vertical;
-      border: 1px solid #ccc;
-      border-radius: 12px;
-      padding: 15px;
+      border: 0;
+      outline: 0;
+      padding: 12px;
       font-size: 16px;
-      outline: none;
     }
 
     #sendButton {
-      border: none;
-      background: #111827;
+      width: 56px;
+      height: 56px;
+      border: 0;
+      border-radius: 50%;
+      background: #1685e9;
       color: white;
-      border-radius: 12px;
-      padding: 0 20px;
-      font-size: 16px;
+      font-size: 24px;
       cursor: pointer;
     }
 
     #sendButton:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
+      opacity: .5;
     }
 
     /* =========================
-       FORMULAIRES
+       CLIENTS / VENTES
     ========================= */
 
-    input,
-    select {
+    input {
       width: 100%;
-      padding: 13px;
+      padding: 14px;
       margin: 7px 0 12px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
+      border: 1px solid #ccd8e5;
+      border-radius: 12px;
       font-size: 16px;
     }
 
     .action-button {
-      border: none;
-      background: #111827;
-      color: white;
+      border: 0;
       padding: 13px 20px;
-      border-radius: 10px;
-      cursor: pointer;
+      border-radius: 12px;
+      background: #0864c7;
+      color: white;
       font-size: 16px;
+      cursor: pointer;
     }
 
     .result {
       margin-top: 15px;
       padding: 12px;
-      border-radius: 10px;
-      background: #f3f4f6;
+      border-radius: 12px;
+      background: #f3f7fb;
+    }
+
+    /* =========================
+       NAVIGATION BAS
+    ========================= */
+
+    .bottom-nav {
+      position: fixed;
+      z-index: 50;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 82px;
+      background: rgba(255,255,255,.97);
+      border-top: 1px solid #dce6ef;
+      box-shadow: 0 -5px 20px rgba(0,0,0,.08);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .bottom-nav button {
+      border: 0;
+      background: transparent;
+      color: #47566d;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .bottom-nav .nav-icon {
+      display: block;
+      font-size: 27px;
+      margin-bottom: 4px;
+    }
+
+    .bottom-nav button.active {
+      color: #0879e3;
+      font-weight: bold;
     }
 
     /* =========================
        MOBILE
     ========================= */
 
-    @media (max-width: 650px) {
+    @media (max-width: 750px) {
 
-      header h1 {
-        font-size: 25px;
+      .hero {
+        min-height: 260px;
+      }
+
+      .hero-content {
+        padding: 25px 12px;
+        gap: 8px;
+      }
+
+      .brand-area {
+        gap: 9px;
+      }
+
+      .kb-logo {
+        width: 78px;
+        height: 78px;
+        border-width: 3px;
+      }
+
+      .kb-crown {
+        font-size: 19px;
+      }
+
+      .kb-text {
+        font-size: 27px;
+      }
+
+      .brand-title {
+        font-size: 23px;
+      }
+
+      .flag {
+        font-size: 21px;
+      }
+
+      .slogan {
+        font-size: 13px;
+        margin-top: 8px;
+      }
+
+      .profile-photo {
+        width: 115px;
+        height: 115px;
+        border-width: 4px;
+      }
+
+      .hamburger {
+        left: 15px;
+        top: 22px;
+        font-size: 27px;
+      }
+
+      .bell {
+        right: 15px;
+        top: 22px;
+        font-size: 26px;
       }
 
       .stats {
         grid-template-columns: 1fr 1fr;
+        gap: 12px;
       }
 
-      .menu {
-        grid-template-columns: 1fr 1fr 1fr;
+      .stat-card {
+        min-height: 145px;
+        padding: 15px;
       }
 
-      .menu button {
-        font-size: 14px;
-        padding: 13px 5px;
+      .stat-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 27px;
       }
 
-      .card-value {
+      .stat-title {
+        left: 82px;
+        top: 18px;
+        font-size: 16px;
+      }
+
+      .stat-value {
+        left: 82px;
+        top: 51px;
+        font-size: 26px;
+      }
+
+      .stat-footer {
+        left: 82px;
+        bottom: 14px;
+        font-size: 12px;
+      }
+
+      .main-menu {
+        gap: 8px;
+      }
+
+      .main-menu button {
+        min-height: 62px;
+        font-size: 13px;
+      }
+
+      .section {
+        padding: 17px;
+      }
+
+      .assistant-top {
+        align-items: flex-start;
+      }
+
+      .assistant-name {
+        display: none;
+      }
+
+      .assistant-heading h2 {
         font-size: 25px;
       }
 
-      .chat-form {
-        flex-direction: column;
+      .message {
+        max-width: 95%;
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 430px) {
+
+      .brand-title {
+        font-size: 19px;
       }
 
-      #sendButton {
-        min-height: 50px;
+      .slogan {
+        font-size: 11px;
       }
 
-      #messages {
-        height: 300px;
+      .kb-logo {
+        width: 65px;
+        height: 65px;
+      }
+
+      .kb-text {
+        font-size: 22px;
+      }
+
+      .profile-photo {
+        width: 95px;
+        height: 95px;
+      }
+
+      .stat-title {
+        font-size: 14px;
+        left: 74px;
+      }
+
+      .stat-value {
+        font-size: 23px;
+        left: 74px;
+      }
+
+      .stat-footer {
+        left: 74px;
+        font-size: 10px;
       }
     }
   </style>
@@ -289,741 +753,137 @@
 
 <body>
 
-<header>
-  <h1>KHALIL BUSINESS 🇸🇳</h1>
-  <p>Votre assistant intelligent pour gérer votre activité</p>
-</header>
-
-<div class="container">
-
   <!-- =========================
-       STATISTIQUES
-  ========================== -->
+       HEADER
+  ========================= -->
 
-  <div class="stats">
+  <header class="hero">
 
-    <div class="card">
-      <div class="card-title">💰 Chiffre d'affaires</div>
-      <div class="card-value" id="totalSales">0 FCFA</div>
+    <div class="hamburger">☰</div>
+
+    <div class="bell">
+      ♧
+      <span class="bell-dot"></span>
     </div>
 
-    <div class="card">
-      <div class="card-title">📈 Bénéfice</div>
-      <div class="card-value" id="profit">0 FCFA</div>
-    </div>
+    <div class="hero-content">
 
-    <div class="card">
-      <div class="card-title">📦 Produits</div>
-      <div class="card-value" id="productsCount">0</div>
-    </div>
+      <div class="brand-area">
 
-    <div class="card">
-      <div class="card-title">👥 Clients</div>
-      <div class="card-value" id="customersCount">0</div>
-    </div>
+        <div class="kb-logo">
+          <div class="kb-crown">♛</div>
+          <div class="kb-text">KB</div>
+        </div>
 
-  </div>
+        <div>
+          <h1 class="brand-title">
+            <span class="gold">KHALIL</span> BUSINESS
+            <span class="flag">🇸🇳</span>
+          </h1>
 
-  <!-- =========================
-       MENU
-  ========================== -->
-
-  <div class="menu">
-
-    <button onclick="showSection('clients')">
-      👥 Clients
-    </button>
-
-    <button onclick="showSection('sales')">
-      💰 Ventes
-    </button>
-
-    <button onclick="showSection('assistant')">
-      🤖 Assistant IA
-    </button>
-
-  </div>
-
-  <!-- =========================
-       TABLEAU DE BORD
-  ========================== -->
-
-  <div class="dashboard">
-
-    <h2>📊 Tableau de bord</h2>
-
-    <p>
-      Bienvenue dans KHALIL BUSINESS.
-    </p>
-
-    <p>
-      Ici, tu peux suivre ton activité,
-      tes ventes, tes produits et tes clients.
-    </p>
-
-    <button onclick="loadDashboard()">
-      🔄 Actualiser
-    </button>
-
-  </div>
-
-
-  <!-- =========================
-       CLIENTS
-  ========================== -->
-
-  <div id="clients" class="section">
-
-    <h2>👥 Gestion des clients</h2>
-
-    <input
-      type="text"
-      id="customerName"
-      placeholder="Nom du client"
-    >
-
-    <input
-      type="text"
-      id="customerPhone"
-      placeholder="Téléphone"
-    >
-
-    <button
-      class="action-button"
-      onclick="addCustomer()"
-    >
-      Ajouter le client
-    </button>
-
-    <div
-      id="customersList"
-      class="result"
-    >
-      Chargement...
-    </div>
-
-  </div>
-
-
-  <!-- =========================
-       VENTES
-  ========================== -->
-
-  <div id="sales" class="section">
-
-    <h2>💰 Ventes</h2>
-
-    <p>
-      Les ventes enregistrées apparaîtront ici.
-    </p>
-
-    <div
-      id="salesList"
-      class="result"
-    >
-      Chargement...
-    </div>
-
-  </div>
-
-
-  <!-- =========================
-       ASSISTANT IA
-  ========================== -->
-
-  <div id="assistant" class="section active">
-
-    <h2>🤖 Assistant IA</h2>
-
-    <p>
-      Pose une question à KHALIL BUSINESS.
-    </p>
-
-    <div class="chat-box">
-
-      <div id="messages">
-
-        <div class="message assistant">
-          Bonjour 👋<br><br>
-          Je suis KHALIL BUSINESS 🇸🇳.<br><br>
-          Je peux t'aider avec tes ventes,
-          tes produits, tes clients,
-          tes bénéfices et ton activité.
-          <br><br>
-          Écris ta question ci-dessous.
+          <p class="slogan">
+            Votre assistant intelligent pour gérer<br>
+            votre activité
+          </p>
         </div>
 
       </div>
 
-      <div class="chat-form">
-
-        <textarea
-          id="messageInput"
-          placeholder="Écris ta question ici..."
-        ></textarea>
-
-        <button
-          id="sendButton"
-          onclick="sendMessage()"
+      <!-- TA PHOTO PNG -->
+      <div class="profile-photo">
+        <img
+          src="/photo.png"
+          alt="Photo KHALIL BUSINESS"
         >
-          Envoyer ➤
-        </button>
-
       </div>
 
     </div>
 
-  </div>
+  </header>
 
-</div>
 
+  <!-- =========================
+       CONTENU
+  ========================= -->
 
-<script>
+  <main class="container">
 
-  /* =========================
-     HISTORIQUE IA
-  ========================== */
+    <!-- STATISTIQUES -->
 
-  let conversationHistory = [];
+    <div class="stats">
 
+      <div class="stat-card sales-card">
 
-  /* =========================
-     AFFICHER UNE SECTION
-  ========================== */
+        <div class="stat-icon icon-green">
+          💰
+        </div>
 
-  function showSection(sectionId) {
+        <div class="stat-title">
+          Chiffre d'affaires
+        </div>
 
-    document
-      .querySelectorAll(".section")
-      .forEach(section => {
-        section.classList.remove("active");
-      });
+        <div
+          class="stat-value"
+          id="totalSales"
+        >
+          0 FCFA
+        </div>
 
-    const section =
-      document.getElementById(sectionId);
+        <div class="stat-footer green">
+          ↗ +0% ce mois
+        </div>
 
-    if (section) {
-      section.classList.add("active");
+      </div>
 
-      section.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
 
-    if (sectionId === "clients") {
-      loadCustomers();
-    }
+      <div class="stat-card profit-card">
 
-    if (sectionId === "sales") {
-      loadSales();
-    }
+        <div class="stat-icon icon-blue">
+          📊
+        </div>
 
-  }
+        <div class="stat-title">
+          Bénéfice
+        </div>
 
+        <div
+          class="stat-value"
+          id="profit"
+        >
+          0 FCFA
+        </div>
 
-  /* =========================
-     AJOUTER MESSAGE
-  ========================== */
+        <div class="stat-footer blue">
+          ↗ +0% ce mois
+        </div>
 
-  function addMessage(text, role) {
+      </div>
 
-    const messages =
-      document.getElementById("messages");
 
-    const div =
-      document.createElement("div");
+      <div class="stat-card products-card">
 
-    div.className =
-      "message " + role;
+        <div class="stat-icon icon-orange">
+          📦
+        </div>
 
-    div.textContent = text;
+        <div class="stat-title">
+          Produits
+        </div>
 
-    messages.appendChild(div);
+        <div
+          class="stat-value"
+          id="productsCount"
+        >
+          0
+        </div>
 
-    messages.scrollTop =
-      messages.scrollHeight;
+        <div class="stat-footer orange">
+          ↗ +0 nouveau
+        </div>
 
-  }
+      </div>
 
 
-  /* =========================
-     ENVOYER MESSAGE IA
-  ========================== */
+      <div class="stat-card customers-card">
 
-  async function sendMessage() {
-
-    const input =
-      document.getElementById(
-        "messageInput"
-      );
-
-    const button =
-      document.getElementById(
-        "sendButton"
-      );
-
-    const message =
-      input.value.trim();
-
-    if (!message) {
-      alert(
-        "Écris d'abord une question."
-      );
-      return;
-    }
-
-    addMessage(
-      message,
-      "user"
-    );
-
-    input.value = "";
-
-    button.disabled = true;
-    button.textContent =
-      "Envoi...";
-
-    try {
-
-      const response =
-        await fetch(
-          "/api/chat",
-          {
-            method: "POST",
-
-            headers: {
-              "Content-Type":
-                "application/json"
-            },
-
-            body: JSON.stringify({
-
-              message: message,
-
-              messages:
-                conversationHistory
-
-            })
-
-          }
-        );
-
-
-      const data =
-        await response.json();
-
-
-      if (!response.ok) {
-
-        throw new Error(
-          data.error ||
-          "Erreur du serveur."
-        );
-
-      }
-
-
-      const answer =
-        data.answer ||
-        "Je n'ai pas reçu de réponse.";
-
-
-      addMessage(
-        answer,
-        "assistant"
-      );
-
-
-      conversationHistory.push(
-        {
-          role: "user",
-          content: message
-        }
-      );
-
-
-      conversationHistory.push(
-        {
-          role: "assistant",
-          content: answer
-        }
-      );
-
-
-      conversationHistory =
-        conversationHistory.slice(-10);
-
-
-    } catch (error) {
-
-      console.error(error);
-
-      addMessage(
-        "❌ " + error.message,
-        "assistant"
-      );
-
-    } finally {
-
-      button.disabled = false;
-
-      button.textContent =
-        "Envoyer ➤";
-
-    }
-
-  }
-
-
-  /* =========================
-     ENTRÉE AVEC CTRL + ENTER
-  ========================== */
-
-  document
-    .getElementById("messageInput")
-    .addEventListener(
-      "keydown",
-      function(event) {
-
-        if (
-          event.key === "Enter" &&
-          !event.shiftKey
-        ) {
-
-          event.preventDefault();
-
-          sendMessage();
-
-        }
-
-      }
-    );
-
-
-  /* =========================
-     TABLEAU DE BORD
-  ========================== */
-
-  async function loadDashboard() {
-
-    try {
-
-      const response =
-        await fetch(
-          "/api/dashboard"
-        );
-
-      const data =
-        await response.json();
-
-
-      document
-        .getElementById(
-          "totalSales"
-        )
-        .textContent =
-        Number(
-          data.totalSales || 0
-        ).toLocaleString(
-          "fr-FR"
-        ) + " FCFA";
-
-
-      document
-        .getElementById(
-          "profit"
-        )
-        .textContent =
-        Number(
-          data.profit || 0
-        ).toLocaleString(
-          "fr-FR"
-        ) + " FCFA";
-
-
-      document
-        .getElementById(
-          "productsCount"
-        )
-        .textContent =
-        data.productsCount || 0;
-
-
-      document
-        .getElementById(
-          "customersCount"
-        )
-        .textContent =
-        data.customersCount || 0;
-
-
-    } catch (error) {
-
-      console.error(
-        "Erreur dashboard:",
-        error
-      );
-
-    }
-
-  }
-
-
-  /* =========================
-     CLIENTS
-  ========================== */
-
-  async function addCustomer() {
-
-    const name =
-      document
-        .getElementById(
-          "customerName"
-        )
-        .value
-        .trim();
-
-    const phone =
-      document
-        .getElementById(
-          "customerPhone"
-        )
-        .value
-        .trim();
-
-
-    if (!name) {
-
-      alert(
-        "Entre le nom du client."
-      );
-
-      return;
-
-    }
-
-
-    try {
-
-      const response =
-        await fetch(
-          "/api/customers",
-          {
-
-            method: "POST",
-
-            headers: {
-              "Content-Type":
-                "application/json"
-            },
-
-            body: JSON.stringify({
-              name,
-              phone
-            })
-
-          }
-        );
-
-
-      const data =
-        await response.json();
-
-
-      if (!response.ok) {
-
-        throw new Error(
-          data.error ||
-          "Impossible d'ajouter le client."
-        );
-
-      }
-
-
-      document
-        .getElementById(
-          "customerName"
-        )
-        .value = "";
-
-      document
-        .getElementById(
-          "customerPhone"
-        )
-        .value = "";
-
-
-      alert(
-        "✅ Client ajouté."
-      );
-
-
-      loadCustomers();
-      loadDashboard();
-
-
-    } catch (error) {
-
-      alert(
-        "❌ " + error.message
-      );
-
-    }
-
-  }
-
-
-  async function loadCustomers() {
-
-    const container =
-      document.getElementById(
-        "customersList"
-      );
-
-    try {
-
-      const response =
-        await fetch(
-          "/api/customers"
-        );
-
-      const customers =
-        await response.json();
-
-
-      if (
-        !customers.length
-      ) {
-
-        container.innerHTML =
-          "Aucun client pour le moment.";
-
-        return;
-
-      }
-
-
-      container.innerHTML =
-        customers
-          .map(
-            customer =>
-              `
-              <div style="
-                padding:10px;
-                border-bottom:1px solid #ddd;
-              ">
-                <strong>
-                  ${escapeHtml(customer.name)}
-                </strong>
-                <br>
-                📞 ${escapeHtml(customer.phone || "Non renseigné")}
-              </div>
-              `
-          )
-          .join("");
-
-
-    } catch (error) {
-
-      container.textContent =
-        "Impossible de charger les clients.";
-
-    }
-
-  }
-
-
-  /* =========================
-     VENTES
-  ========================== */
-
-  async function loadSales() {
-
-    const container =
-      document.getElementById(
-        "salesList"
-      );
-
-    try {
-
-      const response =
-        await fetch(
-          "/api/sales"
-        );
-
-      const sales =
-        await response.json();
-
-
-      if (!sales.length) {
-
-        container.innerHTML =
-          "Aucune vente pour le moment.";
-
-        return;
-
-      }
-
-
-      container.innerHTML =
-        sales
-          .slice()
-          .reverse()
-          .map(
-            sale =>
-              `
-              <div style="
-                padding:10px;
-                border-bottom:1px solid #ddd;
-              ">
-                <strong>
-                  ${escapeHtml(sale.productName)}
-                </strong>
-                <br>
-                Quantité : ${sale.quantity}
-                <br>
-                Total :
-                ${Number(sale.total).toLocaleString("fr-FR")}
-                FCFA
-              </div>
-              `
-          )
-          .join("");
-
-
-    } catch (error) {
-
-      container.textContent =
-        "Impossible de charger les ventes.";
-
-    }
-
-  }
-
-
-  /* =========================
-     SÉCURITÉ HTML
-  ========================== */
-
-  function escapeHtml(value) {
-
-    return String(value)
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-
-  }
-
-
-  /* =========================
-     DÉMARRAGE
-  ========================== */
-
-  loadDashboard();
-
-</script>
-
-</body>
-</html>
+        <div class="
