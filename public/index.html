@@ -13,166 +13,189 @@
     }
 
     :root {
-      --navy: #062d5c;
-      --blue: #0864c7;
-      --light-blue: #eaf5ff;
-      --green: #079447;
-      --purple: #6835d8;
-      --orange: #f5a400;
-      --text: #092653;
-      --background: #eef8ff;
+      --blue-dark: #063567;
+      --blue: #0879df;
+      --green: #08a653;
+      --purple: #7138dd;
+      --orange: #f5a500;
+      --text: #071f4d;
+      --background: #eef9ff;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
+      padding: 0 0 90px 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--background);
       color: var(--text);
-      padding-bottom: 85px;
+      background: var(--background);
     }
 
-    /* =========================
+    button,
+    input,
+    textarea {
+      font-family: inherit;
+    }
+
+    /* =====================================================
        HEADER
-    ========================= */
+    ===================================================== */
 
     .hero {
       position: relative;
-      min-height: 285px;
+      height: 500px;
       overflow: hidden;
+      background: #063567;
       color: white;
-      background: linear-gradient(
-        135deg,
-        #05284f 0%,
-        #06386d 100%
-      );
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      left: -5%;
-      bottom: -72px;
-      width: 110%;
-      height: 120px;
-      background: white;
-      border-radius: 50% 50% 0 0;
-    }
-
+    /* grande courbe blanche en bas */
     .hero::after {
       content: "";
       position: absolute;
-      left: -5%;
-      bottom: -60px;
-      width: 110%;
-      height: 30px;
-      background: #f5cf35;
-      transform: rotate(-2deg);
+      left: -10%;
+      bottom: -95px;
+      width: 120%;
+      height: 175px;
+      background: white;
+      border-radius: 50% 50% 0 0;
+      z-index: 2;
     }
 
-    .hamburger {
+    .hero-top {
       position: absolute;
-      top: 27px;
+      top: 32px;
       left: 30px;
-      z-index: 5;
-      font-size: 32px;
+      right: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .menu-icon {
+      width: 42px;
+      height: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .menu-icon span {
+      height: 4px;
+      width: 40px;
+      background: white;
+      border-radius: 5px;
+    }
+
+    .notification {
+      position: relative;
+      font-size: 35px;
       cursor: pointer;
       line-height: 1;
     }
 
-    .bell {
+    .notification-dot {
       position: absolute;
-      top: 27px;
-      right: 30px;
-      z-index: 5;
-      font-size: 30px;
+      top: -3px;
+      right: -3px;
+      width: 12px;
+      height: 12px;
+      background: #ef3340;
+      border-radius: 50%;
     }
 
-    .bell-dot {
-      position: absolute;
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: #ed3340;
-      top: -1px;
-      right: -2px;
-    }
+    /* contenu du header */
 
     .hero-content {
-      position: relative;
-      z-index: 3;
-      width: 94%;
-      max-width: 1100px;
-      min-height: 260px;
-      margin: auto;
+      position: absolute;
+      top: 170px;
+      left: 5%;
+      width: 90%;
+      z-index: 5;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      padding: 25px 35px;
     }
 
     .brand-area {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 20px;
+      min-width: 0;
     }
 
+    /* LOGO KB */
+
     .kb-logo {
-      width: 130px;
-      height: 130px;
-      flex-shrink: 0;
-      border: 5px solid #f5c92e;
+      width: 135px;
+      height: 135px;
+      min-width: 135px;
+      border: 5px solid #f5ca32;
       border-radius: 50%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      color: #f5c92e;
+      justify-content: center;
+      color: #f5ca32;
+      background: rgba(0,0,0,0.04);
     }
 
-    .kb-crown {
-      font-size: 29px;
-      line-height: 28px;
+    .crown {
+      font-size: 32px;
+      line-height: 30px;
     }
 
-    .kb-text {
-      font-size: 43px;
+    .kb {
+      font-size: 40px;
       font-weight: bold;
-      line-height: 42px;
+      line-height: 43px;
+    }
+
+    .brand-text {
+      min-width: 0;
     }
 
     .brand-title {
       margin: 0;
-      font-size: 42px;
-      font-weight: bold;
+      font-size: 40px;
+      line-height: 1.1;
+      font-weight: 800;
       white-space: nowrap;
     }
 
     .brand-title .gold {
-      color: #f5c92e;
+      color: #f6c934;
     }
 
-    .flag {
-      font-size: 33px;
+    .senegal {
+      font-size: 30px;
       margin-left: 7px;
     }
 
     .slogan {
-      margin: 12px 0 0;
-      font-size: 21px;
-      line-height: 1.4;
-      color: #e6eef8;
+      margin: 16px 0 0;
+      font-size: 20px;
+      line-height: 1.45;
+      color: #e9f2ff;
     }
 
+    /* PHOTO PNG */
+
     .profile-photo {
-      width: 190px;
-      height: 190px;
-      flex-shrink: 0;
+      width: 180px;
+      height: 180px;
+      min-width: 180px;
       border-radius: 50%;
       overflow: hidden;
-      border: 6px solid white;
-      box-shadow: 0 0 0 4px #f4cc35;
       background: #ddd;
+      border: 6px solid white;
+      box-shadow: 0 0 0 5px #f5ca32;
+      margin-left: 15px;
     }
 
     .profile-photo img {
@@ -182,19 +205,21 @@
       display: block;
     }
 
-    /* =========================
+    /* =====================================================
        CONTENU
-    ========================= */
+    ===================================================== */
 
     .container {
+      position: relative;
+      z-index: 5;
       width: 94%;
       max-width: 1100px;
-      margin: 20px auto;
+      margin: -5px auto 0;
     }
 
-    /* =========================
+    /* =====================================================
        STATISTIQUES
-    ========================= */
+    ===================================================== */
 
     .stats {
       display: grid;
@@ -204,169 +229,177 @@
 
     .stat-card {
       position: relative;
-      min-height: 175px;
+      min-height: 180px;
+      border-radius: 28px;
       padding: 25px;
       overflow: hidden;
-      border-radius: 24px;
-      background: white;
-      box-shadow: 0 6px 22px rgba(0, 60, 120, 0.09);
+      box-shadow: 0 7px 20px rgba(0, 70, 130, 0.08);
     }
 
-    .sales-card {
+    .card-sales {
       background: linear-gradient(
-        135deg,
-        #f0fff8,
-        #e8fff7
+        145deg,
+        #effff7,
+        #e5fff5
       );
     }
 
-    .profit-card {
+    .card-profit {
       background: linear-gradient(
-        135deg,
-        #f1f8ff,
-        #edf7ff
+        145deg,
+        #f0f8ff,
+        #e9f5ff
       );
     }
 
-    .products-card {
+    .card-products {
       background: linear-gradient(
-        135deg,
+        145deg,
         #fffaf0,
-        #fff4d9
+        #fff3d7
       );
     }
 
-    .customers-card {
+    .card-customers {
       background: linear-gradient(
-        135deg,
-        #faf5ff,
-        #f5eeff
+        145deg,
+        #fbf6ff,
+        #f5edff
       );
     }
 
     .stat-icon {
-      width: 70px;
-      height: 70px;
+      width: 72px;
+      height: 72px;
       border-radius: 50%;
       display: flex;
-      justify-content: center;
       align-items: center;
-      font-size: 34px;
+      justify-content: center;
+      font-size: 37px;
     }
 
-    .icon-green {
-      background: #0db955;
+    .green-icon {
+      background: #08b952;
     }
 
-    .icon-blue {
-      background: #268bea;
+    .blue-icon {
+      background: #278be8;
     }
 
-    .icon-orange {
+    .orange-icon {
       background: #f4a400;
     }
 
-    .icon-purple {
-      background: #7139df;
+    .purple-icon {
+      background: #7438dc;
+    }
+
+    .stat-content {
+      position: absolute;
+      left: 115px;
+      top: 25px;
+      right: 12px;
     }
 
     .stat-title {
-      position: absolute;
-      left: 125px;
-      top: 28px;
       font-size: 23px;
+      line-height: 1.2;
       font-weight: bold;
+      margin-bottom: 8px;
     }
 
     .stat-value {
-      position: absolute;
-      left: 125px;
-      top: 68px;
-      font-size: 39px;
-      font-weight: bold;
-      color: #061f4b;
+      font-size: 38px;
+      line-height: 1;
+      font-weight: 800;
+      color: #061e4b;
     }
 
     .stat-footer {
       position: absolute;
-      left: 125px;
-      bottom: 23px;
-      font-size: 18px;
+      left: 115px;
+      bottom: 25px;
+      font-size: 17px;
     }
 
-    .green {
+    .green-text {
       color: #079447;
     }
 
-    .blue {
+    .blue-text {
       color: #0879df;
     }
 
-    .orange {
-      color: #e89400;
+    .orange-text {
+      color: #e69a00;
     }
 
-    .purple {
-      color: #7139df;
+    .purple-text {
+      color: #7438dc;
     }
 
-    /* =========================
-       BOUTONS PRINCIPAUX
-    ========================= */
+    /* =====================================================
+       MENU PRINCIPAL
+    ===================================================== */
 
     .main-menu {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
-      margin: 22px 0;
+      margin: 25px 0;
     }
 
-    .main-menu button {
-      min-height: 78px;
-      border: 0;
-      border-radius: 18px;
+    .main-button {
+      border: none;
+      min-height: 80px;
+      border-radius: 19px;
       color: white;
-      font-size: 19px;
+      font-size: 20px;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+      box-shadow: 0 7px 18px rgba(0,0,0,0.12);
+      transition: transform .15s;
     }
 
-    .btn-clients {
+    .main-button:active {
+      transform: scale(.97);
+    }
+
+    .clients-button {
       background: linear-gradient(
         135deg,
-        #0755ad,
-        #0c68c9
+        #0754aa,
+        #0b6aca
       );
     }
 
-    .btn-sales {
+    .sales-button {
       background: linear-gradient(
         135deg,
         #008b43,
-        #08a658
+        #09a85a
       );
     }
 
-    .btn-ai {
+    .ai-button {
       background: linear-gradient(
         135deg,
-        #5e2bc9,
-        #7439e7
+        #602bc8,
+        #743be4
       );
     }
 
-    /* =========================
+    /* =====================================================
        SECTIONS
-    ========================= */
+    ===================================================== */
 
     .section {
       display: none;
       background: white;
-      border-radius: 25px;
+      border-radius: 28px;
       padding: 25px;
-      margin-top: 15px;
-      box-shadow: 0 5px 20px rgba(0,50,100,0.08);
+      margin-top: 20px;
+      box-shadow: 0 7px 22px rgba(0,60,120,.08);
     }
 
     .section.active {
@@ -374,32 +407,32 @@
     }
 
     .section h2 {
-      margin-top: 0;
-      color: var(--text);
+      margin: 0 0 20px;
+      font-size: 28px;
     }
 
-    /* =========================
-       ASSISTANT
-    ========================= */
+    /* =====================================================
+       ASSISTANT IA
+    ===================================================== */
 
-    .assistant-top {
+    .assistant-header {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
       gap: 15px;
     }
 
-    .assistant-heading {
+    .assistant-title-area {
       display: flex;
       align-items: center;
       gap: 15px;
     }
 
-    .robot-circle {
+    .robot-icon {
       width: 68px;
       height: 68px;
       border-radius: 50%;
-      background: #0864c7;
+      background: #0757b5;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -407,45 +440,46 @@
       color: white;
     }
 
-    .assistant-heading h2 {
-      margin: 0;
-      font-size: 30px;
+    .assistant-title {
+      margin: 0 !important;
+      font-size: 29px !important;
     }
 
-    .status {
+    .online {
       margin-top: 5px;
       color: #079447;
-      font-size: 17px;
+      font-size: 16px;
     }
 
-    .assistant-name {
+    .business-side {
+      text-align: right;
       font-size: 20px;
       font-weight: bold;
-      text-align: right;
     }
 
-    .assistant-name small {
+    .business-side small {
       display: block;
-      margin-top: 5px;
+      margin-top: 6px;
+      font-size: 14px;
       font-weight: normal;
     }
 
     #messages {
-      min-height: 190px;
-      max-height: 430px;
+      min-height: 180px;
+      max-height: 450px;
       overflow-y: auto;
-      padding: 12px;
-      margin: 18px 0;
       background: #f7fbff;
       border-radius: 20px;
+      padding: 10px;
+      margin: 20px 0;
     }
 
     .message {
-      max-width: 88%;
+      max-width: 90%;
+      padding: 15px 18px;
       margin: 10px 0;
-      padding: 16px 20px;
-      border-radius: 20px;
-      line-height: 1.55;
+      border-radius: 18px;
+      line-height: 1.5;
       white-space: pre-wrap;
     }
 
@@ -455,45 +489,55 @@
     }
 
     .message.user {
-      background: #d7ebff;
+      background: #d5eaff;
       margin-left: auto;
       text-align: right;
     }
+
+    /* QUESTIONS RAPIDES */
 
     .quick-buttons {
       display: flex;
       gap: 10px;
       overflow-x: auto;
-      padding: 3px 0 12px;
+      padding: 3px 2px 13px;
+      scrollbar-width: none;
     }
 
-    .quick-buttons button {
-      white-space: nowrap;
-      border: 2px solid #a5d1f5;
-      color: #0870d4;
+    .quick-buttons::-webkit-scrollbar {
+      display: none;
+    }
+
+    .quick-button {
+      flex-shrink: 0;
+      border: 2px solid #a8d4f7;
       background: white;
+      color: #0872d4;
       border-radius: 25px;
       padding: 10px 16px;
       cursor: pointer;
+      font-size: 14px;
     }
+
+    /* CHAT */
 
     .chat-form {
       display: flex;
       align-items: center;
-      gap: 8px;
-      border: 2px solid #b7daf7;
+      gap: 7px;
+      border: 2px solid #b8dcf8;
       border-radius: 35px;
-      padding: 7px 8px 7px 16px;
+      padding: 6px 7px 6px 15px;
       background: white;
     }
 
     #messageInput {
       flex: 1;
-      min-height: 48px;
-      max-height: 130px;
+      border: none;
+      outline: none;
       resize: vertical;
-      border: 0;
-      outline: 0;
+      min-height: 50px;
+      max-height: 130px;
       padding: 12px;
       font-size: 16px;
     }
@@ -501,9 +545,10 @@
     #sendButton {
       width: 56px;
       height: 56px;
-      border: 0;
+      flex-shrink: 0;
+      border: none;
       border-radius: 50%;
-      background: #1685e9;
+      background: #1585e9;
       color: white;
       font-size: 24px;
       cursor: pointer;
@@ -513,239 +558,334 @@
       opacity: .5;
     }
 
-    /* =========================
-       CLIENTS / VENTES
-    ========================= */
+    /* =====================================================
+       FORMULAIRES
+    ===================================================== */
 
     input {
       width: 100%;
       padding: 14px;
       margin: 7px 0 12px;
-      border: 1px solid #ccd8e5;
+      border: 1px solid #cdd9e5;
       border-radius: 12px;
+      outline: none;
       font-size: 16px;
+    }
+
+    input:focus {
+      border-color: #1685e9;
     }
 
     .action-button {
-      border: 0;
-      padding: 13px 20px;
-      border-radius: 12px;
+      border: none;
       background: #0864c7;
       color: white;
-      font-size: 16px;
+      padding: 13px 20px;
+      border-radius: 12px;
       cursor: pointer;
+      font-size: 16px;
     }
 
     .result {
-      margin-top: 15px;
+      margin-top: 18px;
       padding: 12px;
       border-radius: 12px;
-      background: #f3f7fb;
+      background: #f4f8fc;
     }
 
-    /* =========================
+    /* =====================================================
        NAVIGATION BAS
-    ========================= */
+    ===================================================== */
 
     .bottom-nav {
       position: fixed;
-      z-index: 50;
-      bottom: 0;
       left: 0;
       right: 0;
+      bottom: 0;
       height: 82px;
-      background: rgba(255,255,255,.97);
-      border-top: 1px solid #dce6ef;
+      background: rgba(255,255,255,.98);
+      border-top: 1px solid #dbe5ef;
       box-shadow: 0 -5px 20px rgba(0,0,0,.08);
+      z-index: 100;
       display: grid;
       grid-template-columns: repeat(5, 1fr);
     }
 
     .bottom-nav button {
-      border: 0;
+      border: none;
       background: transparent;
-      color: #47566d;
+      color: #4a5870;
       font-size: 13px;
       cursor: pointer;
     }
 
-    .bottom-nav .nav-icon {
+    .bottom-icon {
       display: block;
       font-size: 27px;
       margin-bottom: 4px;
     }
 
     .bottom-nav button.active {
-      color: #0879e3;
+      color: #0879df;
       font-weight: bold;
     }
 
-    /* =========================
+    /* =====================================================
        MOBILE
-    ========================= */
+    ===================================================== */
 
-    @media (max-width: 750px) {
+    @media (max-width: 700px) {
+
+      body {
+        padding-bottom: 82px;
+      }
+
+      /* HEADER MOBILE */
 
       .hero {
-        min-height: 260px;
+        height: 500px;
+      }
+
+      .hero-top {
+        top: 25px;
+        left: 30px;
+        right: 30px;
+      }
+
+      .menu-icon {
+        width: 40px;
+        height: 34px;
+      }
+
+      .menu-icon span {
+        width: 39px;
+        height: 4px;
+      }
+
+      .notification {
+        font-size: 31px;
       }
 
       .hero-content {
-        padding: 25px 12px;
-        gap: 8px;
+        top: 190px;
+        left: 6%;
+        width: 88%;
+        align-items: center;
       }
 
       .brand-area {
-        gap: 9px;
+        gap: 14px;
+        align-items: center;
       }
 
       .kb-logo {
-        width: 78px;
-        height: 78px;
-        border-width: 3px;
-      }
-
-      .kb-crown {
-        font-size: 19px;
-      }
-
-      .kb-text {
-        font-size: 27px;
-      }
-
-      .brand-title {
-        font-size: 23px;
-      }
-
-      .flag {
-        font-size: 21px;
-      }
-
-      .slogan {
-        font-size: 13px;
-        margin-top: 8px;
-      }
-
-      .profile-photo {
-        width: 115px;
-        height: 115px;
+        width: 120px;
+        min-width: 120px;
+        height: 120px;
         border-width: 4px;
       }
 
-      .hamburger {
-        left: 15px;
-        top: 22px;
+      .crown {
         font-size: 27px;
       }
 
-      .bell {
-        right: 15px;
-        top: 22px;
-        font-size: 26px;
+      .kb {
+        font-size: 36px;
       }
+
+      .brand-title {
+        font-size: 27px;
+      }
+
+      .senegal {
+        font-size: 23px;
+      }
+
+      .slogan {
+        font-size: 15px;
+        margin-top: 12px;
+      }
+
+      .profile-photo {
+        position: absolute;
+        left: 100%;
+        transform: translateX(-15px);
+        width: 145px;
+        height: 145px;
+        min-width: 145px;
+        border-width: 5px;
+      }
+
+      .container {
+        width: 94%;
+        margin-top: -2px;
+      }
+
+      /* STATISTIQUES */
 
       .stats {
         grid-template-columns: 1fr 1fr;
-        gap: 12px;
+        gap: 14px;
       }
 
       .stat-card {
-        min-height: 145px;
-        padding: 15px;
+        min-height: 190px;
+        border-radius: 27px;
+        padding: 20px;
       }
 
       .stat-icon {
-        width: 55px;
-        height: 55px;
-        font-size: 27px;
+        width: 64px;
+        height: 64px;
+        font-size: 32px;
+      }
+
+      .stat-content {
+        left: 92px;
+        top: 25px;
       }
 
       .stat-title {
-        left: 82px;
-        top: 18px;
-        font-size: 16px;
+        font-size: 20px;
       }
 
       .stat-value {
-        left: 82px;
-        top: 51px;
-        font-size: 26px;
+        font-size: 31px;
       }
 
       .stat-footer {
-        left: 82px;
-        bottom: 14px;
-        font-size: 12px;
+        left: 92px;
+        bottom: 23px;
+        font-size: 14px;
       }
+
+      /* BOUTONS */
 
       .main-menu {
-        gap: 8px;
+        gap: 10px;
+        margin: 18px 0;
       }
 
-      .main-menu button {
-        min-height: 62px;
-        font-size: 13px;
+      .main-button {
+        min-height: 65px;
+        border-radius: 17px;
+        font-size: 14px;
       }
+
+      /* ASSISTANT */
 
       .section {
-        padding: 17px;
+        padding: 18px;
+        border-radius: 23px;
       }
 
-      .assistant-top {
+      .assistant-header {
         align-items: flex-start;
       }
 
-      .assistant-name {
-        display: none;
+      .robot-icon {
+        width: 58px;
+        height: 58px;
+        font-size: 30px;
       }
 
-      .assistant-heading h2 {
-        font-size: 25px;
+      .assistant-title {
+        font-size: 25px !important;
+      }
+
+      .business-side {
+        display: none;
       }
 
       .message {
         max-width: 95%;
         font-size: 15px;
       }
+
+      .quick-button {
+        font-size: 13px;
+      }
     }
+
+    /* =====================================================
+       PETITS TÉLÉPHONES
+    ===================================================== */
 
     @media (max-width: 430px) {
 
-      .brand-title {
-        font-size: 19px;
+      .hero {
+        height: 455px;
       }
 
-      .slogan {
-        font-size: 11px;
+      .hero-content {
+        top: 175px;
       }
 
       .kb-logo {
-        width: 65px;
-        height: 65px;
+        width: 94px;
+        min-width: 94px;
+        height: 94px;
       }
 
-      .kb-text {
+      .crown {
         font-size: 22px;
       }
 
+      .kb {
+        font-size: 29px;
+      }
+
+      .brand-title {
+        font-size: 21px;
+      }
+
+      .senegal {
+        font-size: 18px;
+      }
+
+      .slogan {
+        font-size: 12px;
+      }
+
       .profile-photo {
-        width: 95px;
-        height: 95px;
+        width: 120px;
+        height: 120px;
+        min-width: 120px;
+      }
+
+      .stat-card {
+        min-height: 165px;
+        padding: 15px;
+      }
+
+      .stat-icon {
+        width: 58px;
+        height: 58px;
+        font-size: 28px;
+      }
+
+      .stat-content {
+        left: 78px;
+        top: 20px;
       }
 
       .stat-title {
-        font-size: 14px;
-        left: 74px;
+        font-size: 16px;
       }
 
       .stat-value {
-        font-size: 23px;
-        left: 74px;
+        font-size: 25px;
       }
 
       .stat-footer {
-        left: 74px;
-        font-size: 10px;
+        left: 78px;
+        bottom: 18px;
+        font-size: 11px;
+      }
+
+      .main-button {
+        min-height: 58px;
+        font-size: 12px;
       }
     }
   </style>
@@ -753,48 +893,68 @@
 
 <body>
 
-  <!-- =========================
+  <!-- =====================================================
        HEADER
-  ========================= -->
+  ====================================================== -->
 
   <header class="hero">
 
-    <div class="hamburger">☰</div>
+    <div class="hero-top">
 
-    <div class="bell">
-      ♧
-      <span class="bell-dot"></span>
+      <div class="menu-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="notification">
+        ♧
+        <span class="notification-dot"></span>
+      </div>
+
     </div>
+
 
     <div class="hero-content">
 
       <div class="brand-area">
 
         <div class="kb-logo">
-          <div class="kb-crown">♛</div>
-          <div class="kb-text">KB</div>
+          <div class="crown">♛</div>
+          <div class="kb">KB</div>
         </div>
 
-        <div>
+        <div class="brand-text">
+
           <h1 class="brand-title">
-            <span class="gold">KHALIL</span> BUSINESS
-            <span class="flag">🇸🇳</span>
+            <span class="gold">KHALIL</span>
+            BUSINESS
+            <span class="senegal">🇸🇳</span>
           </h1>
 
           <p class="slogan">
             Votre assistant intelligent pour gérer<br>
             votre activité
           </p>
+
         </div>
 
       </div>
 
-      <!-- TA PHOTO PNG -->
+
+      <!--
+        PHOTO PNG
+        Mets ton fichier dans :
+        public/photo.png
+      -->
+
       <div class="profile-photo">
+
         <img
           src="/photo.png"
-          alt="Photo KHALIL BUSINESS"
+          alt="Photo"
         >
+
       </div>
 
     </div>
@@ -802,88 +962,171 @@
   </header>
 
 
-  <!-- =========================
-       CONTENU
-  ========================= -->
+  <!-- =====================================================
+       CONTENU PRINCIPAL
+  ====================================================== -->
 
   <main class="container">
 
-    <!-- STATISTIQUES -->
+
+    <!-- ===================================================
+         STATISTIQUES
+    ==================================================== -->
 
     <div class="stats">
 
-      <div class="stat-card sales-card">
 
-        <div class="stat-icon icon-green">
+      <!-- CHIFFRE D'AFFAIRES -->
+
+      <div class="stat-card card-sales">
+
+        <div class="stat-icon green-icon">
           💰
         </div>
 
-        <div class="stat-title">
-          Chiffre d'affaires
+        <div class="stat-content">
+
+          <div class="stat-title">
+            Chiffre<br class="mobile-break">
+            d'affaires
+          </div>
+
+          <div
+            class="stat-value"
+            id="totalSales"
+          >
+            0 FCFA
+          </div>
+
         </div>
 
-        <div
-          class="stat-value"
-          id="totalSales"
-        >
-          0 FCFA
-        </div>
-
-        <div class="stat-footer green">
+        <div class="stat-footer green-text">
           ↗ +0% ce mois
         </div>
 
       </div>
 
 
-      <div class="stat-card profit-card">
+      <!-- BENEFICE -->
 
-        <div class="stat-icon icon-blue">
+      <div class="stat-card card-profit">
+
+        <div class="stat-icon blue-icon">
           📊
         </div>
 
-        <div class="stat-title">
-          Bénéfice
+        <div class="stat-content">
+
+          <div class="stat-title">
+            Bénéfice
+          </div>
+
+          <div
+            class="stat-value"
+            id="profit"
+          >
+            0 FCFA
+          </div>
+
         </div>
 
-        <div
-          class="stat-value"
-          id="profit"
-        >
-          0 FCFA
-        </div>
-
-        <div class="stat-footer blue">
+        <div class="stat-footer blue-text">
           ↗ +0% ce mois
         </div>
 
       </div>
 
 
-      <div class="stat-card products-card">
+      <!-- PRODUITS -->
 
-        <div class="stat-icon icon-orange">
+      <div class="stat-card card-products">
+
+        <div class="stat-icon orange-icon">
           📦
         </div>
 
-        <div class="stat-title">
-          Produits
+        <div class="stat-content">
+
+          <div class="stat-title">
+            Produits
+          </div>
+
+          <div
+            class="stat-value"
+            id="productsCount"
+          >
+            0
+          </div>
+
         </div>
 
-        <div
-          class="stat-value"
-          id="productsCount"
-        >
-          0
-        </div>
-
-        <div class="stat-footer orange">
+        <div class="stat-footer orange-text">
           ↗ +0 nouveau
         </div>
 
       </div>
 
 
-      <div class="stat-card customers-card">
+      <!-- CLIENTS -->
 
-        <div class="
+      <div class="stat-card card-customers">
+
+        <div class="stat-icon purple-icon">
+          👥
+        </div>
+
+        <div class="stat-content">
+
+          <div class="stat-title">
+            Clients
+          </div>
+
+          <div
+            class="stat-value"
+            id="customersCount"
+          >
+            0
+          </div>
+
+        </div>
+
+        <div class="stat-footer purple-text">
+          ↗ +0 nouveau
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ===================================================
+         3 BOUTONS
+    ==================================================== -->
+
+    <div class="main-menu">
+
+      <button
+        class="main-button clients-button"
+        onclick="showSection('clients')"
+      >
+        👥 &nbsp; Clients
+      </button>
+
+      <button
+        class="main-button sales-button"
+        onclick="showSection('sales')"
+      >
+        💰 &nbsp; Ventes
+      </button>
+
+      <button
+        class="main-button ai-button"
+        onclick="showSection('assistant')"
+      >
+        🤖 &nbsp; Assistant IA
+      </button>
+
+    </div>
+
+
+    
