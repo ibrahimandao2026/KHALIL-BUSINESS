@@ -21,8 +21,8 @@
     header {
       background: #111827;
       color: white;
-      padding: 25px 15px;
       text-align: center;
+      padding: 25px 15px;
     }
 
     header h1 {
@@ -32,15 +32,14 @@
 
     header p {
       margin: 10px 0 0;
-      font-size: 16px;
-      opacity: 0.85;
+      font-size: 17px;
+      color: #d1d5db;
     }
 
     .container {
-      width: 100%;
+      width: 95%;
       max-width: 1100px;
-      margin: auto;
-      padding: 18px;
+      margin: 25px auto;
     }
 
     /* =========================
@@ -51,52 +50,49 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 15px;
-      margin-bottom: 20px;
     }
 
-    .stat {
+    .card {
       background: white;
-      border-radius: 20px;
-      padding: 22px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
     }
 
-    .stat-title {
+    .card-title {
+      font-size: 18px;
       color: #6b7280;
-      font-size: 17px;
       margin-bottom: 10px;
     }
 
-    .stat-value {
-      font-size: 28px;
+    .card-value {
+      font-size: 30px;
       font-weight: bold;
     }
 
     /* =========================
-       NAVIGATION
+       MENU
     ========================= */
 
-    .nav {
+    .menu {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
 
-    .nav button {
+    .menu button {
       border: none;
+      padding: 16px 10px;
       border-radius: 15px;
-      padding: 16px 8px;
       background: #e5e7eb;
       color: #111827;
-      font-size: 15px;
+      font-size: 16px;
       cursor: pointer;
-      font-weight: bold;
     }
 
-    .nav button.active {
-      background: #111827;
-      color: white;
+    .menu button:hover {
+      background: #d1d5db;
     }
 
     /* =========================
@@ -105,22 +101,117 @@
 
     .section {
       display: none;
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      margin-top: 15px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
     }
 
     .section.active {
       display: block;
     }
 
-    .card {
-      background: white;
-      border-radius: 22px;
-      padding: 22px;
-      margin-bottom: 18px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+    .section h2 {
+      margin-top: 0;
     }
 
-    .card h2 {
+    /* =========================
+       TABLEAU
+    ========================= */
+
+    .dashboard {
+      background: #111827;
+      color: white;
+      border-radius: 20px;
+      padding: 25px;
+      margin-top: 20px;
+    }
+
+    .dashboard h2 {
       margin-top: 0;
+    }
+
+    .dashboard button {
+      margin-top: 15px;
+      border: none;
+      background: white;
+      color: #111827;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       IA
+    ========================= */
+
+    .chat-box {
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      padding: 15px;
+      background: #f9fafb;
+    }
+
+    #messages {
+      height: 350px;
+      overflow-y: auto;
+      padding: 10px;
+      margin-bottom: 15px;
+      background: white;
+      border-radius: 12px;
+    }
+
+    .message {
+      padding: 12px 15px;
+      border-radius: 14px;
+      margin: 10px 0;
+      max-width: 90%;
+      white-space: pre-wrap;
+      line-height: 1.5;
+    }
+
+    .user {
+      background: #dbeafe;
+      margin-left: auto;
+      text-align: right;
+    }
+
+    .assistant {
+      background: #e5e7eb;
+      margin-right: auto;
+    }
+
+    .chat-form {
+      display: flex;
+      gap: 10px;
+    }
+
+    #messageInput {
+      flex: 1;
+      min-height: 55px;
+      resize: vertical;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 15px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    #sendButton {
+      border: none;
+      background: #111827;
+      color: white;
+      border-radius: 12px;
+      padding: 0 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #sendButton:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
 
     /* =========================
@@ -128,169 +219,69 @@
     ========================= */
 
     input,
-    select,
-    textarea {
+    select {
       width: 100%;
-      padding: 14px;
-      margin: 7px 0;
-      border: 1px solid #d1d5db;
-      border-radius: 12px;
+      padding: 13px;
+      margin: 7px 0 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
       font-size: 16px;
-      background: white;
     }
 
-    textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    .btn {
+    .action-button {
       border: none;
-      border-radius: 12px;
-      padding: 14px 18px;
+      background: #111827;
+      color: white;
+      padding: 13px 20px;
+      border-radius: 10px;
       cursor: pointer;
       font-size: 16px;
-      font-weight: bold;
-      margin-top: 8px;
     }
 
-    .btn-primary {
-      background: #111827;
-      color: white;
-    }
-
-    .btn-success {
-      background: #16a34a;
-      color: white;
-    }
-
-    .btn-danger {
-      background: #dc2626;
-      color: white;
-    }
-
-    /* =========================
-       LISTES
-    ========================= */
-
-    .item {
-      border: 1px solid #e5e7eb;
-      border-radius: 15px;
-      padding: 15px;
-      margin-top: 10px;
-      background: #fafafa;
-    }
-
-    .item strong {
-      display: block;
-      font-size: 17px;
-      margin-bottom: 5px;
-    }
-
-    /* =========================
-       ASSISTANT IA
-    ========================= */
-
-    .chat-box {
-      height: 420px;
-      overflow-y: auto;
-      background: #f8fafc;
-      border-radius: 18px;
-      padding: 15px;
-      border: 1px solid #e5e7eb;
-      margin-bottom: 15px;
-    }
-
-    .message {
-      max-width: 90%;
-      padding: 13px 15px;
-      border-radius: 16px;
-      margin-bottom: 12px;
-      line-height: 1.5;
-      white-space: pre-wrap;
-    }
-
-    .message.user {
-      margin-left: auto;
-      background: #111827;
-      color: white;
-    }
-
-    .message.assistant {
-      margin-right: auto;
-      background: #e5e7eb;
-      color: #111827;
-    }
-
-    .chat-form {
-      display: flex;
-      gap: 8px;
-      align-items: flex-end;
-    }
-
-    .chat-form textarea {
-      margin: 0;
-      min-height: 55px;
-      max-height: 140px;
-    }
-
-    .chat-form button {
-      height: 55px;
-      white-space: nowrap;
-      margin: 0;
-    }
-
-    .loading {
-      opacity: 0.7;
-      font-style: italic;
+    .result {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 10px;
+      background: #f3f4f6;
     }
 
     /* =========================
        MOBILE
     ========================= */
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
 
       header h1 {
         font-size: 25px;
       }
 
-      .container {
-        padding: 12px;
-      }
-
       .stats {
-        gap: 10px;
+        grid-template-columns: 1fr 1fr;
       }
 
-      .stat {
-        padding: 17px;
-        border-radius: 17px;
+      .menu {
+        grid-template-columns: 1fr 1fr 1fr;
       }
 
-      .stat-title {
-        font-size: 15px;
+      .menu button {
+        font-size: 14px;
+        padding: 13px 5px;
       }
 
-      .stat-value {
-        font-size: 23px;
-      }
-
-      .nav button {
-        font-size: 13px;
-        padding: 14px 5px;
-      }
-
-      .card {
-        padding: 17px;
+      .card-value {
+        font-size: 25px;
       }
 
       .chat-form {
         flex-direction: column;
       }
 
-      .chat-form button {
-        width: 100%;
+      #sendButton {
+        min-height: 50px;
+      }
+
+      #messages {
+        height: 300px;
       }
     }
   </style>
@@ -311,64 +302,44 @@
 
   <div class="stats">
 
-    <div class="stat">
-      <div class="stat-title">💰 Chiffre d'affaires</div>
-      <div class="stat-value" id="totalSales">0 FCFA</div>
+    <div class="card">
+      <div class="card-title">💰 Chiffre d'affaires</div>
+      <div class="card-value" id="totalSales">0 FCFA</div>
     </div>
 
-    <div class="stat">
-      <div class="stat-title">📈 Bénéfice</div>
-      <div class="stat-value" id="profit">0 FCFA</div>
+    <div class="card">
+      <div class="card-title">📈 Bénéfice</div>
+      <div class="card-value" id="profit">0 FCFA</div>
     </div>
 
-    <div class="stat">
-      <div class="stat-title">📦 Produits</div>
-      <div class="stat-value" id="productsCount">0</div>
+    <div class="card">
+      <div class="card-title">📦 Produits</div>
+      <div class="card-value" id="productsCount">0</div>
     </div>
 
-    <div class="stat">
-      <div class="stat-title">👥 Clients</div>
-      <div class="stat-value" id="customersCount">0</div>
+    <div class="card">
+      <div class="card-title">👥 Clients</div>
+      <div class="card-value" id="customersCount">0</div>
     </div>
 
   </div>
 
   <!-- =========================
-       NAVIGATION
+       MENU
   ========================== -->
 
-  <div class="nav">
+  <div class="menu">
 
-    <button
-      id="btnDashboard"
-      class="active"
-      onclick="showSection('dashboard')">
-      📊 Tableau
-    </button>
-
-    <button
-      onclick="showSection('products')">
-      📦 Produits
-    </button>
-
-    <button
-      onclick="showSection('customers')">
+    <button onclick="showSection('clients')">
       👥 Clients
     </button>
 
-    <button
-      onclick="showSection('sales')">
+    <button onclick="showSection('sales')">
       💰 Ventes
     </button>
 
-    <button
-      onclick="showSection('assistant')">
+    <button onclick="showSection('assistant')">
       🤖 Assistant IA
-    </button>
-
-    <button
-      onclick="loadDashboard()">
-      🔄 Actualiser
     </button>
 
   </div>
@@ -377,225 +348,109 @@
        TABLEAU DE BORD
   ========================== -->
 
-  <section
-    id="dashboard"
-    class="section active">
+  <div class="dashboard">
 
-    <div class="card">
+    <h2>📊 Tableau de bord</h2>
 
-      <h2>📊 Tableau de bord</h2>
+    <p>
+      Bienvenue dans KHALIL BUSINESS.
+    </p>
 
-      <p>
-        Bienvenue dans KHALIL BUSINESS.
-      </p>
+    <p>
+      Ici, tu peux suivre ton activité,
+      tes ventes, tes produits et tes clients.
+    </p>
 
-      <p>
-        Ici, tu peux suivre ton activité,
-        tes ventes, tes produits et tes clients.
-      </p>
+    <button onclick="loadDashboard()">
+      🔄 Actualiser
+    </button>
 
-      <button
-        class="btn btn-primary"
-        onclick="loadDashboard()">
-        🔄 Actualiser les données
-      </button>
+  </div>
 
-    </div>
-
-  </section>
-
-  <!-- =========================
-       PRODUITS
-  ========================== -->
-
-  <section
-    id="products"
-    class="section">
-
-    <div class="card">
-
-      <h2>📦 Ajouter un produit</h2>
-
-      <input
-        id="productName"
-        placeholder="Nom du produit">
-
-      <input
-        id="purchasePrice"
-        type="number"
-        placeholder="Prix d'achat en FCFA">
-
-      <input
-        id="salePrice"
-        type="number"
-        placeholder="Prix de vente en FCFA">
-
-      <input
-        id="productStock"
-        type="number"
-        placeholder="Stock">
-
-      <button
-        class="btn btn-success"
-        onclick="addProduct()">
-        ➕ Ajouter le produit
-      </button>
-
-    </div>
-
-    <div class="card">
-
-      <h2>📦 Mes produits</h2>
-
-      <div id="productsList">
-        Chargement...
-      </div>
-
-    </div>
-
-  </section>
 
   <!-- =========================
        CLIENTS
   ========================== -->
 
-  <section
-    id="customers"
-    class="section">
+  <div id="clients" class="section">
 
-    <div class="card">
+    <h2>👥 Gestion des clients</h2>
 
-      <h2>👥 Ajouter un client</h2>
+    <input
+      type="text"
+      id="customerName"
+      placeholder="Nom du client"
+    >
 
-      <input
-        id="customerName"
-        placeholder="Nom du client">
+    <input
+      type="text"
+      id="customerPhone"
+      placeholder="Téléphone"
+    >
 
-      <input
-        id="customerPhone"
-        placeholder="Téléphone">
+    <button
+      class="action-button"
+      onclick="addCustomer()"
+    >
+      Ajouter le client
+    </button>
 
-      <button
-        class="btn btn-success"
-        onclick="addCustomer()">
-        ➕ Ajouter le client
-      </button>
-
+    <div
+      id="customersList"
+      class="result"
+    >
+      Chargement...
     </div>
 
-    <div class="card">
+  </div>
 
-      <h2>👥 Mes clients</h2>
-
-      <div id="customersList">
-        Chargement...
-      </div>
-
-    </div>
-
-  </section>
 
   <!-- =========================
        VENTES
   ========================== -->
 
-  <section
-    id="sales"
-    class="section">
+  <div id="sales" class="section">
 
-    <div class="card">
+    <h2>💰 Ventes</h2>
 
-      <h2>💰 Enregistrer une vente</h2>
+    <p>
+      Les ventes enregistrées apparaîtront ici.
+    </p>
 
-      <select id="saleProduct">
-        <option value="">
-          Sélectionner un produit
-        </option>
-      </select>
-
-      <input
-        id="saleQuantity"
-        type="number"
-        min="1"
-        value="1"
-        placeholder="Quantité">
-
-      <select id="saleCustomer">
-
-        <option value="">
-          Aucun client
-        </option>
-
-      </select>
-
-      <select id="paymentMethod">
-
-        <option value="Espèces">
-          💵 Espèces
-        </option>
-
-        <option value="Wave">
-          📱 Wave
-        </option>
-
-        <option value="Orange Money">
-          🟠 Orange Money
-        </option>
-
-        <option value="Carte">
-          💳 Carte
-        </option>
-
-      </select>
-
-      <button
-        class="btn btn-success"
-        onclick="addSale()">
-        💰 Enregistrer la vente
-      </button>
-
+    <div
+      id="salesList"
+      class="result"
+    >
+      Chargement...
     </div>
 
-    <div class="card">
+  </div>
 
-      <h2>💰 Historique des ventes</h2>
-
-      <div id="salesList">
-        Chargement...
-      </div>
-
-    </div>
-
-  </section>
 
   <!-- =========================
        ASSISTANT IA
   ========================== -->
 
-  <section
-    id="assistant"
-    class="section">
+  <div id="assistant" class="section active">
 
-    <div class="card">
+    <h2>🤖 Assistant IA</h2>
 
-      <h2>🤖 Assistant IA</h2>
+    <p>
+      Pose une question à KHALIL BUSINESS.
+    </p>
 
-      <p>
-        Pose une question à KHALIL BUSINESS.
-      </p>
+    <div class="chat-box">
 
-      <div
-        id="chatBox"
-        class="chat-box">
+      <div id="messages">
 
         <div class="message assistant">
-          Bonjour 👋 Je suis KHALIL BUSINESS 🇸🇳.
-          
-          Je peux t'aider à analyser tes ventes,
-          ton stock, tes bénéfices et développer
-          ton activité.
-
-          Pose-moi ta question.
+          Bonjour 👋<br><br>
+          Je suis KHALIL BUSINESS 🇸🇳.<br><br>
+          Je peux t'aider avec tes ventes,
+          tes produits, tes clients,
+          tes bénéfices et ton activité.
+          <br><br>
+          Écris ta question ci-dessous.
         </div>
 
       </div>
@@ -603,14 +458,14 @@
       <div class="chat-form">
 
         <textarea
-          id="chatInput"
+          id="messageInput"
           placeholder="Écris ta question ici..."
-          onkeydown="handleChatKey(event)"></textarea>
+        ></textarea>
 
         <button
           id="sendButton"
-          class="btn btn-primary"
-          onclick="sendMessage()">
+          onclick="sendMessage()"
+        >
           Envoyer ➤
         </button>
 
@@ -618,20 +473,22 @@
 
     </div>
 
-  </section>
+  </div>
 
 </div>
+
 
 <script>
 
   /* =========================
-     VARIABLES
+     HISTORIQUE IA
   ========================== */
 
   let conversationHistory = [];
 
+
   /* =========================
-     NAVIGATION
+     AFFICHER UNE SECTION
   ========================== */
 
   function showSection(sectionId) {
@@ -647,189 +504,90 @@
 
     if (section) {
       section.classList.add("active");
+
+      section.scrollIntoView({
+        behavior: "smooth"
+      });
     }
 
-    if (sectionId === "products") {
-      loadProducts();
-    }
-
-    if (sectionId === "customers") {
+    if (sectionId === "clients") {
       loadCustomers();
     }
 
     if (sectionId === "sales") {
-      loadProducts();
-      loadCustomers();
       loadSales();
     }
+
   }
+
 
   /* =========================
-     DASHBOARD
+     AJOUTER MESSAGE
   ========================== */
 
-  async function loadDashboard() {
+  function addMessage(text, role) {
 
-    try {
+    const messages =
+      document.getElementById("messages");
 
-      const response =
-        await fetch("/api/dashboard");
+    const div =
+      document.createElement("div");
 
-      const data =
-        await response.json();
+    div.className =
+      "message " + role;
 
-      document.getElementById(
-        "totalSales"
-      ).textContent =
-        formatMoney(data.totalSales);
+    div.textContent = text;
 
-      document.getElementById(
-        "profit"
-      ).textContent =
-        formatMoney(data.profit);
+    messages.appendChild(div);
 
-      document.getElementById(
-        "productsCount"
-      ).textContent =
-        data.productsCount;
+    messages.scrollTop =
+      messages.scrollHeight;
 
-      document.getElementById(
-        "customersCount"
-      ).textContent =
-        data.customersCount;
-
-    } catch (error) {
-
-      console.error(error);
-
-      alert(
-        "Impossible de charger le tableau de bord."
-      );
-
-    }
   }
+
 
   /* =========================
-     PRODUITS
+     ENVOYER MESSAGE IA
   ========================== */
 
-  async function loadProducts() {
+  async function sendMessage() {
 
-    try {
-
-      const response =
-        await fetch("/api/products");
-
-      const products =
-        await response.json();
-
-      const list =
-        document.getElementById(
-          "productsList"
-        );
-
-      const select =
-        document.getElementById(
-          "saleProduct"
-        );
-
-      list.innerHTML = "";
-
-      select.innerHTML =
-        `<option value="">
-          Sélectionner un produit
-        </option>`;
-
-      if (!products.length) {
-
-        list.innerHTML =
-          "<p>Aucun produit pour le moment.</p>";
-
-        return;
-      }
-
-      products.forEach(product => {
-
-        list.innerHTML += `
-
-          <div class="item">
-
-            <strong>
-              📦 ${escapeHtml(product.name)}
-            </strong>
-
-            <div>
-              Prix d'achat :
-              ${formatMoney(product.purchasePrice)}
-            </div>
-
-            <div>
-              Prix de vente :
-              ${formatMoney(product.salePrice)}
-            </div>
-
-            <div>
-              Stock :
-              <strong>${product.stock}</strong>
-            </div>
-
-          </div>
-        `;
-
-        select.innerHTML += `
-
-          <option value="${product.id}">
-            ${escapeHtml(product.name)}
-            — Stock : ${product.stock}
-          </option>
-
-        `;
-
-      });
-
-    } catch (error) {
-
-      console.error(error);
-
-    }
-  }
-
-  async function addProduct() {
-
-    const name =
+    const input =
       document.getElementById(
-        "productName"
-      ).value.trim();
-
-    const purchasePrice =
-      document.getElementById(
-        "purchasePrice"
-      ).value;
-
-    const salePrice =
-      document.getElementById(
-        "salePrice"
-      ).value;
-
-    const stock =
-      document.getElementById(
-        "productStock"
-      ).value;
-
-    if (!name) {
-
-      alert(
-        "Entre le nom du produit."
+        "messageInput"
       );
 
+    const button =
+      document.getElementById(
+        "sendButton"
+      );
+
+    const message =
+      input.value.trim();
+
+    if (!message) {
+      alert(
+        "Écris d'abord une question."
+      );
       return;
     }
+
+    addMessage(
+      message,
+      "user"
+    );
+
+    input.value = "";
+
+    button.disabled = true;
+    button.textContent =
+      "Envoi...";
 
     try {
 
       const response =
         await fetch(
-          "/api/products",
+          "/api/chat",
           {
             method: "POST",
 
@@ -839,146 +597,200 @@
             },
 
             body: JSON.stringify({
-              name,
-              purchasePrice,
-              salePrice,
-              stock
+
+              message: message,
+
+              messages:
+                conversationHistory
+
             })
+
           }
         );
+
 
       const data =
         await response.json();
 
+
       if (!response.ok) {
 
-        alert(
+        throw new Error(
           data.error ||
-          "Erreur."
+          "Erreur du serveur."
         );
 
-        return;
       }
 
-      alert(
-        "Produit ajouté avec succès ✅"
+
+      const answer =
+        data.answer ||
+        "Je n'ai pas reçu de réponse.";
+
+
+      addMessage(
+        answer,
+        "assistant"
       );
 
-      document.getElementById(
-        "productName"
-      ).value = "";
 
-      document.getElementById(
-        "purchasePrice"
-      ).value = "";
-
-      document.getElementById(
-        "salePrice"
-      ).value = "";
-
-      document.getElementById(
-        "productStock"
-      ).value = "";
-
-      await loadProducts();
-      await loadDashboard();
-
-    } catch (error) {
-
-      alert(
-        "Erreur de connexion au serveur."
+      conversationHistory.push(
+        {
+          role: "user",
+          content: message
+        }
       );
 
-    }
-  }
 
-  /* =========================
-     CLIENTS
-  ========================== */
+      conversationHistory.push(
+        {
+          role: "assistant",
+          content: answer
+        }
+      );
 
-  async function loadCustomers() {
 
-    try {
+      conversationHistory =
+        conversationHistory.slice(-10);
 
-      const response =
-        await fetch("/api/customers");
-
-      const customers =
-        await response.json();
-
-      const list =
-        document.getElementById(
-          "customersList"
-        );
-
-      const select =
-        document.getElementById(
-          "saleCustomer"
-        );
-
-      list.innerHTML = "";
-
-      select.innerHTML =
-        `<option value="">
-          Aucun client
-        </option>`;
-
-      if (!customers.length) {
-
-        list.innerHTML =
-          "<p>Aucun client pour le moment.</p>";
-
-        return;
-      }
-
-      customers.forEach(customer => {
-
-        list.innerHTML += `
-
-          <div class="item">
-
-            <strong>
-              👤 ${escapeHtml(customer.name)}
-            </strong>
-
-            <div>
-              📱 ${escapeHtml(
-                customer.phone || "Pas de téléphone"
-              )}
-            </div>
-
-          </div>
-
-        `;
-
-        select.innerHTML += `
-
-          <option value="${customer.id}">
-            ${escapeHtml(customer.name)}
-          </option>
-
-        `;
-
-      });
 
     } catch (error) {
 
       console.error(error);
 
+      addMessage(
+        "❌ " + error.message,
+        "assistant"
+      );
+
+    } finally {
+
+      button.disabled = false;
+
+      button.textContent =
+        "Envoyer ➤";
+
     }
+
   }
+
+
+  /* =========================
+     ENTRÉE AVEC CTRL + ENTER
+  ========================== */
+
+  document
+    .getElementById("messageInput")
+    .addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Enter" &&
+          !event.shiftKey
+        ) {
+
+          event.preventDefault();
+
+          sendMessage();
+
+        }
+
+      }
+    );
+
+
+  /* =========================
+     TABLEAU DE BORD
+  ========================== */
+
+  async function loadDashboard() {
+
+    try {
+
+      const response =
+        await fetch(
+          "/api/dashboard"
+        );
+
+      const data =
+        await response.json();
+
+
+      document
+        .getElementById(
+          "totalSales"
+        )
+        .textContent =
+        Number(
+          data.totalSales || 0
+        ).toLocaleString(
+          "fr-FR"
+        ) + " FCFA";
+
+
+      document
+        .getElementById(
+          "profit"
+        )
+        .textContent =
+        Number(
+          data.profit || 0
+        ).toLocaleString(
+          "fr-FR"
+        ) + " FCFA";
+
+
+      document
+        .getElementById(
+          "productsCount"
+        )
+        .textContent =
+        data.productsCount || 0;
+
+
+      document
+        .getElementById(
+          "customersCount"
+        )
+        .textContent =
+        data.customersCount || 0;
+
+
+    } catch (error) {
+
+      console.error(
+        "Erreur dashboard:",
+        error
+      );
+
+    }
+
+  }
+
+
+  /* =========================
+     CLIENTS
+  ========================== */
 
   async function addCustomer() {
 
     const name =
-      document.getElementById(
-        "customerName"
-      ).value.trim();
+      document
+        .getElementById(
+          "customerName"
+        )
+        .value
+        .trim();
 
     const phone =
-      document.getElementById(
-        "customerPhone"
-      ).value.trim();
+      document
+        .getElementById(
+          "customerPhone"
+        )
+        .value
+        .trim();
+
 
     if (!name) {
 
@@ -987,7 +799,9 @@
       );
 
       return;
+
     }
+
 
     try {
 
@@ -995,6 +809,7 @@
         await fetch(
           "/api/customers",
           {
+
             method: "POST",
 
             headers: {
@@ -1006,174 +821,209 @@
               name,
               phone
             })
+
           }
         );
+
 
       const data =
         await response.json();
 
+
       if (!response.ok) {
 
-        alert(
+        throw new Error(
           data.error ||
-          "Erreur."
+          "Impossible d'ajouter le client."
         );
 
-        return;
       }
 
+
+      document
+        .getElementById(
+          "customerName"
+        )
+        .value = "";
+
+      document
+        .getElementById(
+          "customerPhone"
+        )
+        .value = "";
+
+
       alert(
-        "Client ajouté avec succès ✅"
+        "✅ Client ajouté."
       );
 
-      document.getElementById(
-        "customerName"
-      ).value = "";
 
-      document.getElementById(
-        "customerPhone"
-      ).value = "";
+      loadCustomers();
+      loadDashboard();
 
-      await loadCustomers();
-      await loadDashboard();
 
     } catch (error) {
 
       alert(
-        "Erreur de connexion au serveur."
+        "❌ " + error.message
       );
 
     }
+
   }
 
-  /* =========================
-     VENTES
-  ========================== */
 
-  async function addSale() {
+  async function loadCustomers() {
 
-    const productId =
+    const container =
       document.getElementById(
-        "saleProduct"
-      ).value;
-
-    const quantity =
-      document.getElementById(
-        "saleQuantity"
-      ).value;
-
-    const customerId =
-      document.getElementById(
-        "saleCustomer"
-      ).value;
-
-    const paymentMethod =
-      document.getElementById(
-        "paymentMethod"
-      ).value;
-
-    if (!productId) {
-
-      alert(
-        "Sélectionne un produit."
+        "customersList"
       );
-
-      return;
-    }
 
     try {
 
       const response =
         await fetch(
-          "/api/sales",
-          {
-            method: "POST",
-
-            headers: {
-              "Content-Type":
-                "application/json"
-            },
-
-            body: JSON.stringify({
-              productId,
-              quantity,
-              customerId:
-                customerId || null,
-              paymentMethod
-            })
-          }
+          "/api/customers"
         );
 
-      const data =
+      const customers =
         await response.json();
 
-      if (!response.ok) {
 
-        alert(
-          data.error ||
-          "Erreur lors de la vente."
-        );
+      if (
+        !customers.length
+      ) {
+
+        container.innerHTML =
+          "Aucun client pour le moment.";
 
         return;
+
       }
 
-      alert(
-        "Vente enregistrée ✅"
-      );
 
-      await loadDashboard();
-      await loadProducts();
-      await loadSales();
+      container.innerHTML =
+        customers
+          .map(
+            customer =>
+              `
+              <div style="
+                padding:10px;
+                border-bottom:1px solid #ddd;
+              ">
+                <strong>
+                  ${escapeHtml(customer.name)}
+                </strong>
+                <br>
+                📞 ${escapeHtml(customer.phone || "Non renseigné")}
+              </div>
+              `
+          )
+          .join("");
+
 
     } catch (error) {
 
-      alert(
-        "Erreur de connexion au serveur."
-      );
+      container.textContent =
+        "Impossible de charger les clients.";
 
     }
+
   }
 
+
+  /* =========================
+     VENTES
+  ========================== */
+
   async function loadSales() {
+
+    const container =
+      document.getElementById(
+        "salesList"
+      );
 
     try {
 
       const response =
-        await fetch("/api/sales");
+        await fetch(
+          "/api/sales"
+        );
 
       const sales =
         await response.json();
 
-      const list =
-        document.getElementById(
-          "salesList"
-        );
-
-      list.innerHTML = "";
 
       if (!sales.length) {
 
-        list.innerHTML =
-          "<p>Aucune vente pour le moment.</p>";
+        container.innerHTML =
+          "Aucune vente pour le moment.";
 
         return;
+
       }
 
-      [...sales]
-        .reverse()
-        .forEach(sale => {
 
-          list.innerHTML += `
+      container.innerHTML =
+        sales
+          .slice()
+          .reverse()
+          .map(
+            sale =>
+              `
+              <div style="
+                padding:10px;
+                border-bottom:1px solid #ddd;
+              ">
+                <strong>
+                  ${escapeHtml(sale.productName)}
+                </strong>
+                <br>
+                Quantité : ${sale.quantity}
+                <br>
+                Total :
+                ${Number(sale.total).toLocaleString("fr-FR")}
+                FCFA
+              </div>
+              `
+          )
+          .join("");
 
-            <div class="item">
 
-              <strong>
-                💰 ${escapeHtml(
-                  sale.productName
-                )}
-              </strong>
+    } catch (error) {
 
-              <div>
-                Quantité :
-                ${sale.quantity}
- 
+      container.textContent =
+        "Impossible de charger les ventes.";
+
+    }
+
+  }
+
+
+  /* =========================
+     SÉCURITÉ HTML
+  ========================== */
+
+  function escapeHtml(value) {
+
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+  }
+
+
+  /* =========================
+     DÉMARRAGE
+  ========================== */
+
+  loadDashboard();
+
+</script>
+
+</body>
+  </html>
