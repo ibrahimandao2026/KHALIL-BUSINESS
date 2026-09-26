@@ -1,0 +1,13 @@
+{
+  "name": "khalil-business",
+  "version": "1.0.0",
+  "description": "Application intelligente de gestion pour les commerçants et entrepreneurs au Sénégal",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2"
+  }
+}
