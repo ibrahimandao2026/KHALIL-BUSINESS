@@ -11,344 +11,162 @@
       box-sizing: border-box;
     }
 
-    :root {
-      --blue-dark: #062f61;
-      --blue: #0879df;
-      --green: #08a653;
-      --purple: #7038df;
-      --orange: #f3a400;
-      --bg: #eef8ff;
-      --text: #092654;
-      --white: #ffffff;
-    }
-
     html {
       scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      padding: 0 0 85px;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    button,
-    input,
-    textarea {
-      font-family: inherit;
-    }
-
-    /* ==============================
-       HEADER
-    ============================== */
-
-    .header {
-      position: relative;
-      overflow: hidden;
-      min-height: 350px;
       background:
-        linear-gradient(135deg, #062d5b, #06447f);
+        linear-gradient(
+          rgba(238, 242, 247, 0.92),
+          rgba(238, 242, 247, 0.96)
+        );
+      color: #111827;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      background:
+        linear-gradient(
+          135deg,
+          #071a41,
+          #0d3b78,
+          #1266a8
+        );
+
       color: white;
-      padding: 25px 20px 80px;
+      padding: 25px 18px 30px;
+      text-align: center;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
 
-    .header::after {
-      content: "";
-      position: absolute;
-      left: -10%;
-      bottom: -105px;
-      width: 120%;
-      height: 180px;
-      background: var(--bg);
-      border-radius: 50% 50% 0 0;
-    }
-
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 5;
-    }
-
-    .menu-btn {
-      border: 0;
-      background: transparent;
-      cursor: pointer;
-      width: 45px;
-      padding: 5px;
-    }
-
-    .menu-btn span {
-      display: block;
-      height: 4px;
-      background: white;
-      border-radius: 5px;
-      margin: 7px 0;
-    }
-
-    .notification {
-      position: relative;
-      font-size: 30px;
-    }
-
-    .notification-dot {
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #ef3340;
-      right: -2px;
-      top: 0;
-    }
-
-    /* ==============================
-       BRAND
-    ============================== */
-
-    .brand {
-      position: relative;
-      z-index: 4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      margin-top: 70px;
-    }
-
-    .kb-logo {
+    .profile-photo {
       width: 105px;
       height: 105px;
-      flex-shrink: 0;
-      border: 4px solid #f4c62e;
       border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: #f4c62e;
-    }
-
-    .kb-logo .crown {
-      font-size: 25px;
-    }
-
-    .kb-logo .kb {
-      font-size: 33px;
-      font-weight: 900;
-    }
-
-    .brand-text h1 {
-      margin: 0;
-      font-size: 32px;
-      line-height: 1.15;
-      font-weight: 900;
-      white-space: nowrap;
-    }
-
-    .brand-text h1 span {
-      color: #f4c62e;
-    }
-
-    .flag {
-      font-size: 24px;
-      margin-left: 5px;
-    }
-
-    .brand-text p {
-      margin: 13px 0 0;
-      font-size: 16px;
-      line-height: 1.5;
-      color: #e8f2ff;
-    }
-
-    /* ==============================
-       PHOTO PNG
-    ============================== */
-
-    .photo-wrapper {
-      position: absolute;
-      z-index: 6;
-      right: 25px;
-      top: 115px;
-      width: 125px;
-      height: 125px;
-      border-radius: 50%;
-      border: 5px solid white;
-      box-shadow: 0 0 0 4px #f4c62e;
-      overflow: hidden;
-      background: #ddd;
-    }
-
-    .photo-wrapper img {
-      width: 100%;
-      height: 100%;
       object-fit: cover;
-      display: block;
+      border: 5px solid white;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      margin-bottom: 12px;
     }
 
-    /* ==============================
+    header h1 {
+      margin: 0;
+      font-size: 29px;
+      font-weight: 800;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      color: #e5efff;
+      font-size: 16px;
+    }
+
+    .online {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 12px;
+      background: rgba(255,255,255,0.12);
+      padding: 7px 13px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    .online-dot {
+      width: 9px;
+      height: 9px;
+      background: #22c55e;
+      border-radius: 50%;
+    }
+
+    /* =========================
        CONTENEUR
-    ============================== */
+    ========================= */
 
     .container {
       width: 94%;
       max-width: 1100px;
-      margin: -5px auto 0;
-      position: relative;
-      z-index: 10;
+      margin: 20px auto 110px;
     }
 
-    /* ==============================
+    /* =========================
        STATISTIQUES
-    ============================== */
+    ========================= */
 
     .stats {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
     }
 
     .stat-card {
-      position: relative;
-      min-height: 185px;
+      background: white;
+      border-radius: 20px;
       padding: 20px;
-      border-radius: 27px;
-      overflow: hidden;
-      box-shadow: 0 8px 22px rgba(0, 50, 100, .08);
-    }
-
-    .sales-card {
-      background: linear-gradient(145deg, #effff8, #e1fff3);
-    }
-
-    .profit-card {
-      background: linear-gradient(145deg, #f1f9ff, #e8f5ff);
-    }
-
-    .products-card {
-      background: linear-gradient(145deg, #fffaf0, #fff1d1);
-    }
-
-    .clients-card {
-      background: linear-gradient(145deg, #fbf5ff, #f3eaff);
-    }
-
-    .stat-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 31px;
-    }
-
-    .sales-icon {
-      background: #08b957;
-    }
-
-    .profit-icon {
-      background: #288de8;
-    }
-
-    .products-icon {
-      background: #f4a500;
-    }
-
-    .clients-icon {
-      background: #7439dc;
-    }
-
-    .stat-content {
-      position: absolute;
-      left: 98px;
-      top: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+      border: 1px solid #e5e7eb;
     }
 
     .stat-title {
-      font-size: 19px;
-      font-weight: 800;
-      line-height: 1.2;
+      color: #6b7280;
+      font-size: 15px;
+      margin-bottom: 8px;
     }
 
     .stat-value {
-      margin-top: 7px;
-      font-size: 29px;
-      font-weight: 900;
-      color: #092653;
+      font-size: 25px;
+      font-weight: 800;
+      color: #111827;
     }
 
-    .stat-bottom {
-      position: absolute;
-      left: 98px;
-      bottom: 20px;
-      font-size: 14px;
-    }
+    /* =========================
+       MENU
+    ========================= */
 
-    .green {
-      color: #079447;
-    }
-
-    .blue {
-      color: #0879df;
-    }
-
-    .orange {
-      color: #df9800;
-    }
-
-    .purple {
-      color: #7038df;
-    }
-
-    /* ==============================
-       MENU PRINCIPAL
-    ============================== */
-
-    .quick-menu {
+    .menu {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin: 20px 0;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 18px 0;
     }
 
-    .quick-menu button {
-      min-height: 67px;
-      border: 0;
-      border-radius: 17px;
-      color: white;
+    .menu button {
+      border: none;
+      background: white;
+      color: #0d3b78;
+      border-radius: 16px;
+      padding: 15px 8px;
       font-size: 15px;
-      font-weight: bold;
+      font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 6px 15px rgba(0,0,0,.12);
+      box-shadow: 0 5px 16px rgba(0,0,0,0.06);
+      transition: 0.2s;
     }
 
-    .btn-clients {
-      background: #0756ad;
+    .menu button:hover {
+      transform: translateY(-2px);
+      background: #eaf3ff;
     }
 
-    .btn-sales {
-      background: #06994c;
-    }
-
-    .btn-ai {
-      background: #7035d9;
-    }
-
-    /* ==============================
+    /* =========================
        SECTIONS
-    ============================== */
+    ========================= */
 
     .section {
       display: none;
       background: white;
       border-radius: 25px;
-      padding: 20px;
+      padding: 22px;
       margin-top: 18px;
-      box-shadow: 0 8px 22px rgba(0,50,100,.08);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+      border: 1px solid #e5e7eb;
     }
 
     .section.active {
@@ -357,234 +175,228 @@
 
     .section h2 {
       margin-top: 0;
-      font-size: 25px;
+      color: #0d3b78;
+      font-size: 24px;
     }
 
-    /* ==============================
-       ASSISTANT IA
-    ============================== */
+    /* =========================
+       ASSISTANT
+    ========================= */
 
-    .assistant-top {
+    .assistant-header {
       display: flex;
       align-items: center;
-      gap: 13px;
+      gap: 15px;
+      margin-bottom: 15px;
     }
 
-    .ai-avatar {
-      width: 62px;
-      height: 62px;
+    .assistant-avatar {
+      width: 65px;
+      height: 65px;
       border-radius: 50%;
-      background: #0758b4;
+      background: #0d3b78;
       display: flex;
-      justify-content: center;
       align-items: center;
-      color: white;
-      font-size: 32px;
+      justify-content: center;
+      font-size: 34px;
+      flex-shrink: 0;
     }
 
     .assistant-title h2 {
       margin: 0;
-      font-size: 27px;
+      font-size: 24px;
     }
 
-    .online {
-      color: #0a9d4e;
-      font-size: 14px;
-      margin-top: 4px;
+    .assistant-title p {
+      margin: 5px 0 0;
+      color: #16a34a;
+      font-weight: bold;
     }
 
-    .messages {
-      background: #f5faff;
-      border-radius: 20px;
+    .chat-box {
+      background: #f3f8fd;
+      border-radius: 22px;
       padding: 12px;
-      min-height: 180px;
-      max-height: 420px;
+      border: 1px solid #dceafa;
+    }
+
+    #messages {
+      height: 390px;
       overflow-y: auto;
-      margin: 18px 0;
+      padding: 12px;
+      background: white;
+      border-radius: 18px;
+      margin-bottom: 12px;
     }
 
     .message {
-      max-width: 92%;
-      padding: 14px 16px;
-      margin: 9px 0;
+      padding: 13px 16px;
       border-radius: 17px;
-      line-height: 1.5;
+      margin: 10px 0;
+      max-width: 88%;
       white-space: pre-wrap;
+      line-height: 1.5;
+      font-size: 15px;
     }
 
-    .assistant-message {
-      background: #e5f1ff;
-      margin-right: auto;
-    }
-
-    .user-message {
-      background: #d4eaff;
+    .message.user {
+      background: #dbeafe;
+      color: #12335f;
       margin-left: auto;
-      text-align: right;
+      border-bottom-right-radius: 5px;
     }
 
-    /* ==============================
-       QUESTIONS RAPIDES
-    ============================== */
-
-    .suggestions {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 10px;
+    .message.assistant {
+      background: #eef2f7;
+      color: #111827;
+      margin-right: auto;
+      border-bottom-left-radius: 5px;
     }
-
-    .suggestions button {
-      flex-shrink: 0;
-      border: 2px solid #a9d5f7;
-      background: white;
-      color: #0876d7;
-      border-radius: 25px;
-      padding: 10px 14px;
-      cursor: pointer;
-    }
-
-    /* ==============================
-       CHAT
-    ============================== */
 
     .chat-form {
       display: flex;
-      align-items: center;
-      gap: 8px;
-      border: 2px solid #b9dcf7;
-      border-radius: 35px;
-      padding: 5px 6px 5px 13px;
+      gap: 9px;
       background: white;
+      padding: 7px;
+      border-radius: 18px;
+      border: 2px solid #b9d8f5;
     }
 
     #messageInput {
       flex: 1;
-      border: 0;
-      outline: 0;
-      min-height: 48px;
+      min-height: 52px;
+      max-height: 130px;
       resize: vertical;
+      border: none;
+      outline: none;
+      padding: 13px;
       font-size: 16px;
-      padding: 10px;
+      background: transparent;
     }
 
     #sendButton {
-      width: 55px;
-      height: 55px;
-      border: 0;
-      border-radius: 50%;
-      background: #1687e9;
+      width: 105px;
+      border: none;
+      border-radius: 15px;
+      background: #0d78d4;
       color: white;
-      font-size: 23px;
+      font-weight: bold;
+      font-size: 15px;
       cursor: pointer;
     }
 
-    #sendButton:disabled {
-      opacity: .5;
+    #sendButton:hover {
+      background: #075ca7;
     }
 
-    /* ==============================
-       FORMULAIRES
-    ============================== */
+    #sendButton:disabled {
+      opacity: 0.5;
+    }
 
-    input {
+    .quick-actions {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      margin: 10px 0;
+      padding-bottom: 3px;
+    }
+
+    .quick-actions button {
+      white-space: nowrap;
+      border: 1px solid #a8d0f2;
+      background: white;
+      color: #1266a8;
+      border-radius: 20px;
+      padding: 9px 14px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       FORMULAIRES
+    ========================= */
+
+    input,
+    select {
       width: 100%;
-      border: 1px solid #d0dae4;
-      border-radius: 12px;
       padding: 14px;
-      margin: 7px 0 12px;
+      margin: 6px 0 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
       font-size: 16px;
       outline: none;
     }
 
+    input:focus,
+    select:focus {
+      border-color: #1683dc;
+      box-shadow: 0 0 0 3px rgba(22,131,220,0.1);
+    }
+
     .action-button {
-      border: 0;
-      border-radius: 12px;
-      padding: 13px 20px;
-      background: #0759b2;
+      border: none;
+      background: #0d3b78;
       color: white;
-      font-size: 16px;
+      padding: 13px 20px;
+      border-radius: 12px;
       cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .action-button:hover {
+      background: #082a57;
     }
 
     .result {
       margin-top: 18px;
-      background: #f4f8fc;
-      border-radius: 13px;
       padding: 12px;
+      border-radius: 14px;
+      background: #f8fafc;
     }
 
-    /* ==============================
-       NAVIGATION MOBILE
-    ============================== */
+    /* =========================
+       PRODUITS
+    ========================= */
 
-    .bottom-nav {
-      position: fixed;
-      z-index: 100;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 80px;
-      background: rgba(255,255,255,.98);
-      box-shadow: 0 -5px 20px rgba(0,0,0,.09);
-      border-top: 1px solid #e0e8f0;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
+    .product-form {
+      background: #f8fafc;
+      padding: 15px;
+      border-radius: 18px;
+      margin-bottom: 15px;
     }
 
-    .bottom-nav button {
-      border: 0;
-      background: transparent;
-      color: #536075;
-      cursor: pointer;
-      font-size: 12px;
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      padding: 20px;
+      font-size: 13px;
     }
 
-    .bottom-nav .icon {
-      display: block;
-      font-size: 25px;
-      margin-bottom: 4px;
-    }
+    /* =========================
+       MOBILE
+    ========================= */
 
-    .bottom-nav button.active {
-      color: #0879df;
-      font-weight: bold;
-    }
+    @media (max-width: 750px) {
 
-    /* ==============================
-       RESPONSIVE
-    ============================== */
-
-    @media (max-width: 700px) {
-
-      .header {
-        min-height: 460px;
+      header {
+        padding: 22px 15px 25px;
       }
 
-      .brand {
-        justify-content: flex-start;
-        margin-top: 105px;
-        margin-left: 4px;
+      .profile-photo {
+        width: 90px;
+        height: 90px;
       }
 
-      .kb-logo {
-        width: 95px;
-        height: 95px;
+      header h1 {
+        font-size: 25px;
       }
 
-      .brand-text h1 {
-        font-size: 24px;
-      }
-
-      .brand-text p {
-        font-size: 14px;
-      }
-
-      .photo-wrapper {
-        width: 125px;
-        height: 125px;
-        top: 150px;
-        right: -35px;
+      header p {
+        font-size: 15px;
       }
 
       .stats {
@@ -592,561 +404,57 @@
       }
 
       .stat-card {
-        min-height: 175px;
-      }
-
-      .stat-content {
-        left: 88px;
-      }
-
-      .stat-bottom {
-        left: 88px;
-      }
-
-      .quick-menu {
-        gap: 8px;
-      }
-
-      .quick-menu button {
-        font-size: 12px;
-        min-height: 60px;
-      }
-    }
-
-    @media (max-width: 430px) {
-
-      .header {
-        min-height: 440px;
-      }
-
-      .brand {
-        margin-top: 110px;
-        gap: 10px;
-      }
-
-      .kb-logo {
-        width: 82px;
-        height: 82px;
-      }
-
-      .kb-logo .kb {
-        font-size: 27px;
-      }
-
-      .kb-logo .crown {
-        font-size: 19px;
-      }
-
-      .brand-text h1 {
-        font-size: 20px;
-      }
-
-      .brand-text p {
-        font-size: 12px;
-      }
-
-      .photo-wrapper {
-        width: 105px;
-        height: 105px;
-        top: 160px;
-        right: -35px;
-      }
-
-      .stat-card {
-        min-height: 165px;
-        padding: 15px;
-      }
-
-      .stat-icon {
-        width: 55px;
-        height: 55px;
-        font-size: 26px;
-      }
-
-      .stat-content {
-        left: 75px;
-        top: 17px;
+        padding: 16px;
       }
 
       .stat-title {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       .stat-value {
         font-size: 23px;
       }
 
-      .stat-bottom {
-        left: 75px;
-        bottom: 17px;
-        font-size: 11px;
+      .menu {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .quick-menu button {
-        font-size: 11px;
+      .section {
+        padding: 17px;
+      }
+
+      #messages {
+        height: 350px;
+      }
+
+      .chat-form {
+        align-items: stretch;
+      }
+
+      #sendButton {
+        width: 80px;
       }
     }
-  </style>
-</head>
 
-<body>
+    @media (max-width: 450px) {
 
-  <!-- ==========================================
-       HEADER
-  =========================================== -->
+      .container {
+        width: 95%;
+      }
 
-  <header class="header">
+      .stats {
+        gap: 10px;
+      }
 
-    <div class="top-bar">
+      .stat-card {
+        border-radius: 17px;
+        padding: 14px;
+      }
 
-      <button
-        class="menu-btn"
-        onclick="toggleMenu()"
-        aria-label="Menu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      .stat-value {
+        font-size: 21px;
+      }
 
-      <div class="notification">
-        🔔
-        <span class="notification-dot"></span>
-      </div>
-
-    </div>
-
-
-    <div class="brand">
-
-      <div class="kb-logo">
-        <div class="crown">♛</div>
-        <div class="kb">KB</div>
-      </div>
-
-      <div class="brand-text">
-
-        <h1>
-          <span>KHALIL</span> BUSINESS
-          <b class="flag">🇸🇳</b>
-        </h1>
-
-        <p>
-          Votre assistant intelligent<br>
-          pour gérer votre activité
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <!-- PHOTO PNG -->
-    <div class="photo-wrapper">
-      <img
-        src="/photo.png"
-        alt="Photo KHALIL BUSINESS"
-      >
-    </div>
-
-  </header>
-
-
-  <!-- ==========================================
-       CONTENU
-  =========================================== -->
-
-  <main class="container">
-
-
-    <!-- ========================================
-         STATISTIQUES
-    ========================================= -->
-
-    <div class="stats">
-
-      <div class="stat-card sales-card">
-
-        <div class="stat-icon sales-icon">
-          💰
-        </div>
-
-        <div class="stat-content">
-
-          <div class="stat-title">
-            Chiffre d'affaires
-          </div>
-
-          <div
-            class="stat-value"
-            id="totalSales"
-          >
-            0 FCFA
-          </div>
-
-        </div>
-
-        <div class="stat-bottom green">
-          ↗ +0% ce mois
-        </div>
-
-      </div>
-
-
-      <div class="stat-card profit-card">
-
-        <div class="stat-icon profit-icon">
-          📊
-        </div>
-
-        <div class="stat-content">
-
-          <div class="stat-title">
-            Bénéfice
-          </div>
-
-          <div
-            class="stat-value"
-            id="profit"
-          >
-            0 FCFA
-          </div>
-
-        </div>
-
-        <div class="stat-bottom blue">
-          ↗ +0% ce mois
-        </div>
-
-      </div>
-
-
-      <div class="stat-card products-card">
-
-        <div class="stat-icon products-icon">
-          📦
-        </div>
-
-        <div class="stat-content">
-
-          <div class="stat-title">
-            Produits / Stock
-          </div>
-
-          <div
-            class="stat-value"
-            id="productsCount"
-          >
-            0
-          </div>
-
-        </div>
-
-        <div class="stat-bottom orange">
-          ↗ +0 nouveau
-        </div>
-
-      </div>
-
-
-      <div class="stat-card clients-card">
-
-        <div class="stat-icon clients-icon">
-          👥
-        </div>
-
-        <div class="stat-content">
-
-          <div class="stat-title">
-            Clients
-          </div>
-
-          <div
-            class="stat-value"
-            id="customersCount"
-          >
-            0
-          </div>
-
-        </div>
-
-        <div class="stat-bottom purple">
-          ↗ +0 nouveau
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- ========================================
-         MENU
-    ========================================= -->
-
-    <div class="quick-menu">
-
-      <button
-        class="btn-clients"
-        onclick="showSection('clients')"
-      >
-        👥 Clients
-      </button>
-
-      <button
-        class="btn-sales"
-        onclick="showSection('sales')"
-      >
-        💰 Ventes
-      </button>
-
-      <button
-        class="btn-ai"
-        onclick="showSection('assistant')"
-      >
-        🤖 Assistant IA
-      </button>
-
-    </div>
-
-
-    <!-- ========================================
-         PRODUITS
-    ========================================= -->
-
-    <section
-      id="products"
-      class="section"
-    >
-
-      <h2>📦 Produits / Stock</h2>
-
-      <p>
-        Gestion de tes produits et de ton stock.
-      </p>
-
-      <div class="result">
-        Aucun produit enregistré pour le moment.
-      </div>
-
-    </section>
-
-
-    <!-- ========================================
-         CLIENTS
-    ========================================= -->
-
-    <section
-      id="clients"
-      class="section"
-    >
-
-      <h2>👥 Clients</h2>
-
-      <input
-        type="text"
-        id="customerName"
-        placeholder="Nom du client"
-      >
-
-      <input
-        type="text"
-        id="customerPhone"
-        placeholder="Téléphone"
-      >
-
-      <button
-        class="action-button"
-        onclick="addCustomer()"
-      >
-        Ajouter le client
-      </button>
-
-      <div
-        id="customersList"
-        class="result"
-      >
-        Chargement...
-      </div>
-
-    </section>
-
-
-    <!-- ========================================
-         VENTES
-    ========================================= -->
-
-    <section
-      id="sales"
-      class="section"
-    >
-
-      <h2>💰 Ventes</h2>
-
-      <p>
-        Les ventes enregistrées apparaîtront ici.
-      </p>
-
-      <div
-        id="salesList"
-        class="result"
-      >
-        Chargement...
-      </div>
-
-    </section>
-
-
-    <!-- ========================================
-         ASSISTANT IA
-    ========================================= -->
-
-    <section
-      id="assistant"
-      class="section active"
-    >
-
-      <div class="assistant-top">
-
-        <div class="ai-avatar">
-          🤖
-        </div>
-
-        <div class="assistant-title">
-
-          <h2>
-            Assistant IA
-          </h2>
-
-          <div class="online">
-            ● En ligne
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div
-        id="messages"
-        class="messages"
-      >
-
-        <div class="message assistant-message">
-
-          Bonjour 👋
-
-          <br><br>
-
-          Je suis KHALIL BUSINESS 🇸🇳.
-
-          <br>
-
-          Je peux t'aider avec tes ventes,
-          tes produits, tes clients,
-          tes bénéfices et ton activité.
-
-          <br><br>
-
-          Pose-moi ta question ci-dessous !
-
-        </div>
-
-      </div>
-
-
-      <!-- QUESTIONS RAPIDES -->
-
-      <div class="suggestions">
-
-        <button
-          onclick="quickMessage(
-            'Quel est mon chiffre d’affaires ?'
-          )"
-        >
-          📊 Chiffre d'affaires
-        </button>
-
-        <button
-          onclick="quickMessage(
-            'Quels produits ai-je ?'
-          )"
-        >
-          📦 Mes produits
-        </button>
-
-        <button
-          onclick="quickMessage(
-            'Quels sont mes clients ?'
-          )"
-        >
-          👥 Mes clients
-        </button>
-
-        <button
-          onclick="quickMessage(
-            'Donne-moi des conseils pour vendre plus.'
-          )"
-        >
-          💡 Conseils
-        </button>
-
-      </div>
-
-
-      <!-- CHAT -->
-
-      <div class="chat-form">
-
-        <textarea
-          id="messageInput"
-          placeholder="Écris ta question ici..."
-        ></textarea>
-
-        <button
-          id="sendButton"
-          onclick="sendMessage()"
-        >
-          ➤
-        </button>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- ==========================================
-       NAVIGATION BAS
-  =========================================== -->
-
-  <nav class="bottom-nav">
-
-    <button
-      class="active"
-      onclick="goHome()"
-    >
-      <span class="icon">⌂</span>
-      Accueil
-    </button>
-
-    <button
-      onclick="showSection('products')"
-    >
-      <span class="icon">📦</span>
-      Produits
-    </button>
-
-    <button
-      onclick="showSection('clients')"
-    >
-      <span class="icon">👥</span>
-      Clients
-    </button>
-
-    <button
-      onclick="showSection('sales')"
-    >
-      <span class="icon">💰</span>
-      Ventes
-    </button
+      .menu button {
+        font-size: 14px;
+      }
